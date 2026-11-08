@@ -1,0 +1,33 @@
+@import 'tailwindcss';
+
+/*
+ * 디자인 토큰 (색, 폰트 등). 여기 값을 바꾸면 앱 전체에 반영된다.
+ * 지금 값은 마일스톤 슬라이드의 노랑/주황 톤을 참고한 임시값이며, 디자이너의 하이파이 디자인이 나오면 교체한다.
+ * 사용 예: className="bg-brand-500 text-ink"
+ */
+@theme {
+  --font-sans: 'Pretendard Variable', Pretendard, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --color-brand-50: #fff9eb;
+  --color-brand-100: #ffefc7;
+  --color-brand-200: #ffe19a;
+  --color-brand-400: #f7c04a;
+  --color-brand-500: #f4b03a;
+  --color-brand-600: #e39a1d;
+  --color-brand-700: #b87414;
+
+  --color-ink: #2d2a26;
+  --color-muted: #8a847b;
+  --color-line: #f0e6d2;
+  --color-surface: #ffffff;
+  --color-page: #fffcf3;
+
+  --color-danger: #d64545;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-page);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
