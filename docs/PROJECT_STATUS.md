@@ -36,6 +36,7 @@ TILLY 프론트엔드는 아직 로그인·가입 화면과 API 기반 코드만
 | 2026-11-12 | 컴퓨터를 바꿔도 이어가도록 이 파일을 저장소(`docs/`)에 둔다 | 푸시해야 다른 컴퓨터에서 보임 |
 | 2026-11-12 | 디자인 SVG 원본은 `docs/design/`(main에 커밋), 코드에서 쓰는 자산만 `src/assets/`로 **복사** | 개발은 feature 브랜치에서. 피그마 주석(빨간 화살표·선·초록 띠)은 `docs/design/annotations/` |
 | 2026-11-12 | 최종 로고는 `Tilly.svg` (→ `src/assets/logo.svg`). `Tilly-1.svg`는 삭제 | 사용자 확정 |
+| 2026-11-12 | 개발 서버 포트를 **5173**으로 변경(`vite.config.ts`, `strictPort`) | 백엔드 `.env`의 구글 Redirect URI가 `localhost:5173`. 구글 콘솔 등록값도 5173이어야 함 |
 | 2026-11-12 | Pretendard는 CDN `<link>`(index.html)로 적용 | npm 패키지 대신 |
 
 ## 4. 보류 중 (확정되기 전에는 구현하지 않는다)
