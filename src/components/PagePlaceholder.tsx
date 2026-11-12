@@ -9,7 +9,7 @@ type Props = {
 // (화면 이름 h1 은 AppLayout 의 상단 바가 이미 보여주므로 여기서는 h2 를 쓴다)
 export default function PagePlaceholder({ title, description, todos }: Props) {
   return (
-    <section>
+    <section className="p-2xl">
       <h2 className="text-h2 font-semibold">{title}</h2>
       <p className="mt-2xs text-body3 text-black-300">{description}</p>
 

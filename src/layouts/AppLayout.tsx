@@ -39,7 +39,8 @@ export default function AppLayout() {
               to={to}
               end={end}
               className={({ isActive }) =>
-                `flex items-center gap-s rounded-s px-s py-xs text-body2 ${
+                // 아이콘 위치(x43)와 글자 위치(x78)를 시안 좌표에 맞춘 값이라 11px 이다
+                `flex items-center gap-[11px] rounded-s px-[11px] py-xs text-body2 ${
                   isActive ? 'bg-primary-100 text-primary-600' : 'text-black-500'
                 }`
               }
@@ -58,7 +59,8 @@ export default function AppLayout() {
           <h1 className="text-h3 font-semibold">{currentMenu?.label}</h1>
         </header>
 
-        <main className="p-2xl">
+        {/* 화면마다 시안의 여백이 달라서, 바깥 여백은 각 페이지가 직접 정한다 */}
+        <main>
           <Outlet />
         </main>
       </div>

@@ -17,13 +17,15 @@ export default function SettingsPage() {
       />
 
       {/* 로그아웃: 서버에 알린 뒤 이 기기의 로그인 상태를 지우고 로그인 화면으로 돌아간다 (RequireAuth 가 처리) */}
-      <button
-        type="button"
-        onClick={() => void signOut()}
-        className="mt-l w-full rounded-s border border-gray-300 bg-white py-s text-body3 font-medium"
-      >
-        로그아웃
-      </button>
+      <div className="px-2xl">
+        <button
+          type="button"
+          onClick={() => void signOut()}
+          className="w-full rounded-s border border-gray-300 bg-white py-s text-body3 font-medium"
+        >
+          로그아웃
+        </button>
+      </div>
     </div>
   )
 }
