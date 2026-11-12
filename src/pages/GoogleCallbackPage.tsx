@@ -60,12 +60,12 @@ export default function GoogleCallbackPage() {
       {errorMessage ? (
         <div>
           <p className="text-danger">{errorMessage}</p>
-          <Link to="/login" className="mt-4 inline-block text-sm text-brand-700 underline">
+          <Link to="/login" className="mt-m inline-block text-body3 text-primary-600 underline">
             로그인 화면으로 돌아가기
           </Link>
         </div>
       ) : (
-        <p className="text-muted">로그인 중이에요…</p>
+        <p className="text-black-300">로그인 중이에요…</p>
       )}
     </div>
   )

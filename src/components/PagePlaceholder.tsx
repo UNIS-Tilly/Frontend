@@ -6,15 +6,16 @@ type Props = {
 }
 
 // 아직 구현하지 않은 화면에 임시로 보여주는 안내 카드. 화면을 구현하면 이 컴포넌트는 지운다.
+// (화면 이름 h1 은 AppLayout 의 상단 바가 이미 보여주므로 여기서는 h2 를 쓴다)
 export default function PagePlaceholder({ title, description, todos }: Props) {
   return (
     <section>
-      <h1 className="text-2xl font-bold">{title}</h1>
-      <p className="mt-1 text-sm text-muted">{description}</p>
+      <h2 className="text-h2 font-semibold">{title}</h2>
+      <p className="mt-2xs text-body3 text-black-300">{description}</p>
 
-      <div className="mt-6 rounded-2xl border border-line bg-surface p-5">
-        <h2 className="text-sm font-semibold text-brand-700">구현 예정 기능</h2>
-        <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm">
+      <div className="mt-l rounded-m border border-gray-300 bg-white p-l">
+        <h3 className="text-body3 font-semibold text-primary-600">구현 예정 기능</h3>
+        <ul className="mt-s list-disc space-y-xs pl-l text-body3">
           {todos.map((todo) => (
             <li key={todo}>{todo}</li>
           ))}

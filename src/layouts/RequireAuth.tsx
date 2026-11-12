@@ -6,7 +6,7 @@ export default function RequireAuth() {
   const { status } = useAuth()
 
   if (status === 'loading') {
-    return <div className="grid min-h-screen place-items-center text-muted">불러오는 중…</div>
+    return <div className="grid min-h-screen place-items-center text-black-300">불러오는 중…</div>
   }
   if (status === 'unauthenticated') {
     return <Navigate to="/login" replace />
