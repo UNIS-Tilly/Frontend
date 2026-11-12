@@ -1,33 +1,93 @@
 @import 'tailwindcss';
 
 /*
- * 디자인 토큰 (색, 폰트 등). 여기 값을 바꾸면 앱 전체에 반영된다.
- * 지금 값은 마일스톤 슬라이드의 노랑/주황 톤을 참고한 임시값이며, 디자이너의 하이파이 디자인이 나오면 교체한다.
- * 사용 예: className="bg-brand-500 text-ink"
+ * 디자인 토큰. 피그마 "TiLLy 디자인 시스템" 값을 그대로 옮긴 것이다. 여기 값을 바꾸면 앱 전체에 반영된다.
+ * 사용 예: className="bg-primary-500 text-black-500 rounded-m p-m text-body2"
+ *
+ * `--color-*: initial` 처럼 "initial" 로 비우는 이유: Tailwind 기본 색/라운드를 지워서,
+ * 디자인 시스템에 없는 값(예: bg-red-500, rounded-xl)을 실수로 쓰면 아무 효과가 없게 만들기 위해서다.
  */
 @theme {
   --font-sans: 'Pretendard Variable', Pretendard, system-ui, -apple-system, 'Segoe UI', sans-serif;
 
-  --color-brand-50: #fff9eb;
-  --color-brand-100: #ffefc7;
-  --color-brand-200: #ffe19a;
-  --color-brand-400: #f7c04a;
-  --color-brand-500: #f4b03a;
-  --color-brand-600: #e39a1d;
-  --color-brand-700: #b87414;
+  /* 색 */
+  --color-*: initial;
+  --color-white: #ffffff;
 
-  --color-ink: #2d2a26;
-  --color-muted: #8a847b;
-  --color-line: #f0e6d2;
-  --color-surface: #ffffff;
-  --color-page: #fffcf3;
+  --color-primary-600: #3260dd;
+  --color-primary-500: #4678fd;
+  --color-primary-400: #7c9ef8;
+  --color-primary-300: #abc0f8;
+  --color-primary-200: #d2dcf9;
+  --color-primary-100: #edf1fc;
 
+  --color-secondary-500: #e0f994;
+  --color-secondary-400: #ebfcb6;
+  --color-secondary-300: #f2fcd1;
+  --color-secondary-200: #f7fce5;
+  --color-secondary-100: #fbfdf4;
+
+  --color-black-500: #333333;
+  --color-black-300: #666666;
+
+  --color-gray-500: #b3b3b3;
+  --color-gray-400: #cfcfcf;
+  --color-gray-300: #e4e4e4;
+  --color-gray-200: #f0f0f0;
+  --color-gray-100: #f8f8f8;
+
+  /* 디자인 시스템에는 없지만 하이파이 화면(홈·기록·인사이트·아카이브)의 바탕색으로 쓰인 값 */
+  --color-page: #f5f5f5;
+  /* 임시: 디자인 시스템에 오류(빨강) 색이 없어서 기존 값을 유지한다. 디자이너 확인 후 교체 */
   --color-danger: #d64545;
+
+  /* 라운드 (S 8 · M 16 · L 24 · FULL 99) */
+  --radius-*: initial;
+  --radius-s: 8px;
+  --radius-m: 16px;
+  --radius-l: 24px;
+  --radius-full: 99px;
+
+  /* 간격 (2XS 4 · XS 8 · S 12 · M 16 · L 24 · XL 32 · 2XL 40 · 3XL 56 · 4XL 64 · 5XL 80)
+     p-m, gap-s, mt-xl 처럼 쓴다. 숫자 방식(p-4 = 16px)도 그대로 쓸 수 있다. */
+  --spacing-2xs: 4px;
+  --spacing-xs: 8px;
+  --spacing-s: 12px;
+  --spacing-m: 16px;
+  --spacing-l: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 40px;
+  --spacing-3xl: 56px;
+  --spacing-4xl: 64px;
+  --spacing-5xl: 80px;
+
+  /* 글자 크기 + 행간. 굵기는 클래스로 붙인다. (예: text-h1 font-bold)
+     Headline1 Bold · H2/H3 SemiBold · Body Medium · Button SemiBold · Caption Regular */
+  --text-h1: 28px;
+  --text-h1--line-height: 1.4;
+  --text-h2: 24px;
+  --text-h2--line-height: 1.4;
+  --text-h3: 20px;
+  --text-h3--line-height: 1.4;
+  --text-body1: 18px;
+  --text-body1--line-height: 1.6;
+  --text-body2: 16px;
+  --text-body2--line-height: 1.6;
+  --text-body3: 14px;
+  --text-body3--line-height: 1.6;
+  --text-button: 16px;
+  --text-button--line-height: 1.6;
+  --text-caption: 12px;
+  --text-caption--line-height: 1.6;
 }
 
+/* 본문 기본값: Body2 (16px / Medium / 행간 160%) */
 body {
   margin: 0;
   background-color: var(--color-page);
-  color: var(--color-ink);
+  color: var(--color-black-500);
   font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.6;
 }

@@ -20,7 +20,7 @@ export default function SettingsPage() {
       <button
         type="button"
         onClick={() => void signOut()}
-        className="mt-6 w-full rounded-xl border border-line bg-surface py-3 text-sm font-medium"
+        className="mt-l w-full rounded-s border border-gray-300 bg-white py-s text-body3 font-medium"
       >
         로그아웃
       </button>

@@ -44,12 +44,12 @@ export default function SignupPage() {
     <div className="grid min-h-screen place-items-center px-4">
       <form
         onSubmit={handleSubmit}
-        className="w-full max-w-sm rounded-3xl border border-line bg-surface p-8"
+        className="w-full max-w-sm rounded-l border border-gray-300 bg-white p-xl"
       >
-        <h1 className="text-xl font-bold">TILLY 시작하기</h1>
-        <p className="mt-1 text-sm text-muted">{signupState.email}</p>
+        <h1 className="text-h3 font-semibold">TILLY 시작하기</h1>
+        <p className="mt-2xs text-body3 text-black-300">{signupState.email}</p>
 
-        <label className="mt-6 block text-sm font-medium" htmlFor="nickname">
+        <label className="mt-l block text-body3 font-medium" htmlFor="nickname">
           닉네임
         </label>
         <input
@@ -58,10 +58,10 @@ export default function SignupPage() {
           onChange={(event) => setNickname(event.target.value)}
           maxLength={10}
           placeholder="2~10자"
-          className="mt-1 w-full rounded-xl border border-line px-3 py-2.5 outline-none focus:border-brand-500"
+          className="mt-2xs w-full rounded-s border border-gray-300 px-s py-s outline-none focus:border-primary-500"
         />
 
-        <label className="mt-5 flex items-center gap-2 text-sm">
+        <label className="mt-m flex items-center gap-xs text-body3">
           <input
             type="checkbox"
             checked={agreed}
@@ -71,12 +71,12 @@ export default function SignupPage() {
         </label>
         {/* TODO: 약관 전문 링크 + 약관 버전 저장 (백엔드 API 필요) */}
 
-        {errorMessage && <p className="mt-4 text-sm text-danger">{errorMessage}</p>}
+        {errorMessage && <p className="mt-m text-body3 text-danger">{errorMessage}</p>}
 
         <button
           type="submit"
           disabled={!nicknameValid || !agreed || submitting}
-          className="mt-6 w-full rounded-xl bg-brand-500 py-3 font-semibold text-white
+          className="mt-l w-full rounded-s bg-primary-500 py-s text-button font-semibold text-white
             disabled:cursor-not-allowed disabled:opacity-40"
         >
           {submitting ? '가입 중…' : '가입하고 시작하기'}
