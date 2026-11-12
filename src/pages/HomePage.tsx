@@ -1,9 +1,10 @@
 import { useState } from 'react'
 import Calendar from '../components/Calendar'
+import TaskChecklist from '../components/TaskChecklist'
 import { getTodayInSeoul } from '../lib/date'
 
 export default function HomePage() {
-  // 선택된 날짜. 처음에는 오늘(서울 기준)이다. 다음 단계에서 이 날짜로 할 일 목록을 조회한다.
+  // 선택된 날짜. 처음에는 오늘(서울 기준)이다. 캘린더에서 날짜를 누르면 바뀌고, 체크리스트가 그 날짜로 다시 조회한다.
   const [selectedDate, setSelectedDate] = useState(getTodayInSeoul)
 
   return (
@@ -13,10 +14,7 @@ export default function HomePage() {
         <Calendar selectedDate={selectedDate} onSelect={setSelectedDate} />
       </div>
 
-      {/* 임시: 오른쪽 할 일 목록은 다음 단계에서 만든다 */}
-      <section className="min-h-[328px] flex-1 rounded-m bg-white p-l">
-        <p className="text-body3 text-black-300">선택한 날짜: {selectedDate}</p>
-      </section>
+      <TaskChecklist selectedDate={selectedDate} />
     </div>
   )
 }
