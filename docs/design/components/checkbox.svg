@@ -1,0 +1,12 @@
+<svg width="64" height="108" viewBox="0 0 64 108" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="checkbox">
+<rect x="0.5" y="0.5" width="63" height="107" rx="4.5" stroke="#9747FF" stroke-dasharray="10 5"/>
+<g id="&#236;&#134;&#141;&#236;&#132;&#177; 1=checked">
+<path d="M20 26C20 22.6863 22.6863 20 26 20H38C41.3137 20 44 22.6863 44 26V38C44 41.3137 41.3137 44 38 44H26C22.6863 44 20 41.3137 20 38V26Z" fill="#4678FD"/>
+<path id="Vector" d="M26 32L30.5 36.5L38 27.5" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" stroke="white"/>
+</g>
+<g id="&#236;&#134;&#141;&#236;&#132;&#177; 1=default">
+<path d="M26 64.75H38C40.8995 64.75 43.25 67.1005 43.25 70V82C43.25 84.8995 40.8995 87.25 38 87.25H26C23.1005 87.25 20.75 84.8995 20.75 82V70C20.75 67.1005 23.1005 64.75 26 64.75Z" stroke="#B3B3B3" stroke-width="1.5"/>
+</g>
+</g>
+</svg>
