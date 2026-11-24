@@ -1,0 +1,13 @@
+<svg width="107" height="112" viewBox="0 0 107 112" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="chips">
+<rect x="0.5" y="0.5" width="106" height="111" rx="4.5" stroke="#9747FF" stroke-dasharray="10 5"/>
+<g id="&#236;&#134;&#141;&#236;&#132;&#177; 1=d-day">
+<path d="M20 32.5C20 25.5964 25.5964 20 32.5 20H74.5C81.4036 20 87 25.5964 87 32.5C87 39.4036 81.4036 45 74.5 45H32.5C25.5964 45 20 39.4036 20 32.5Z" fill="#4678FD"/>
+<text id="D-DAY" fill="white" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="14" letter-spacing="0em"><tspan x="32" y="37.4766">D-DAY</tspan></text>
+</g>
+<g id="&#236;&#134;&#141;&#236;&#132;&#177; 1=default">
+<path d="M20 78.5C20 71.5964 25.5964 66 32.5 66H74.5C81.4036 66 87 71.5964 87 78.5C87 85.4036 81.4036 91 74.5 91H32.5C25.5964 91 20 85.4036 20 78.5Z" fill="#EDF1FC"/>
+<text id="D-DAY_2" fill="#3260DD" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="14" letter-spacing="0em"><tspan x="32.2471" y="83.4766">D-DAY</tspan></text>
+</g>
+</g>
+</svg>
