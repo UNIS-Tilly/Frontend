@@ -1,0 +1,36 @@
+<svg width="149" height="264" viewBox="0 0 149 264" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="insight-dropdown">
+<rect x="0.5" y="0.5" width="148" height="263" rx="4.5" stroke="#9747FF" stroke-dasharray="10 5"/>
+<g id="&#236;&#134;&#141;&#236;&#132;&#177; 1=open">
+<g id="Frame 99">
+<path d="M28 20.5H121C125.142 20.5 128.5 23.8579 128.5 28V44C128.5 48.1421 125.142 51.5 121 51.5H28C23.8579 51.5 20.5 48.1421 20.5 44V28C20.5 23.8579 23.8579 20.5 28 20.5Z" stroke="#CFCFCF"/>
+<text id="&#236;&#181;&#156;&#236;&#139;&#160;&#236;&#136;&#156;" fill="#333333" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="16" letter-spacing="0em"><tspan x="33.2578" y="41.6875">&#xcd5c;&#xc2e0;&#xc21c;</tspan></text>
+<g id="akar-icons:chevron-right">
+<path id="Vector" d="M102.667 38.6667L108 33.3334L113.333 38.6667" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="#333333"/>
+</g>
+</g>
+<g id="Frame 108">
+<g id="Frame 106">
+<mask id="path-5-inside-1_129_920" fill="white">
+<path d="M20 64C20 59.5817 23.5817 56 28 56H121C125.418 56 129 59.5817 129 64V91H20V64Z"/>
+</mask>
+<path d="M19 64C19 59.0294 23.0294 55 28 55H121C125.971 55 130 59.0294 130 64H128C128 60.134 124.866 57 121 57H28C24.134 57 21 60.134 21 64H19ZM129 91H20H129ZM19 91V64C19 59.0294 23.0294 55 28 55V57C24.134 57 21 60.134 21 64V91H19ZM121 55C125.971 55 130 59.0294 130 64V91H128V64C128 60.134 124.866 57 121 57V55Z" fill="#CFCFCF" mask="url(#path-5-inside-1_129_920)"/>
+<text id="&#236;&#181;&#156;&#236;&#139;&#160;&#236;&#136;&#156;_2" fill="#666666" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="16" letter-spacing="0em"><tspan x="33" y="79.6875">&#xcd5c;&#xc2e0;&#xc21c;</tspan></text>
+</g>
+<g id="Frame 107">
+<path d="M128.5 91.5V118C128.5 122.142 125.142 125.5 121 125.5H28C23.8579 125.5 20.5 122.142 20.5 118V91.5H128.5Z" stroke="#CFCFCF"/>
+<text id="&#236;&#152;&#164;&#235;&#158;&#152;&#235;&#144;&#156;&#236;&#136;&#156;" fill="#666666" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="16" letter-spacing="0em"><tspan x="33" y="114.188">&#xc624;&#xb798;&#xb41c;&#xc21c;</tspan></text>
+</g>
+</g>
+</g>
+<g id="&#236;&#134;&#141;&#236;&#132;&#177; 1=closed">
+<g id="Frame 99_2">
+<path d="M28 142.5H121C125.142 142.5 128.5 145.858 128.5 150V166C128.5 170.142 125.142 173.5 121 173.5H28C23.8579 173.5 20.5 170.142 20.5 166V150C20.5 145.858 23.8579 142.5 28 142.5Z" stroke="#CFCFCF"/>
+<text id="&#236;&#181;&#156;&#236;&#139;&#160;&#236;&#136;&#156;_3" fill="#333333" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="16" letter-spacing="0em"><tspan x="33.2578" y="163.688">&#xcd5c;&#xc2e0;&#xc21c;</tspan></text>
+<g id="akar-icons:chevron-right_2">
+<path id="Vector_2" d="M113.333 155.333L108 160.667L102.667 155.333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="#333333"/>
+</g>
+</g>
+</g>
+</g>
+</svg>

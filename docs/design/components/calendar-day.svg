@@ -1,0 +1,51 @@
+<svg width="80" height="372" viewBox="0 0 80 372" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Frame 60">
+<rect x="0.5" y="0.5" width="79" height="371" rx="4.5" stroke="#9747FF" stroke-dasharray="10 5"/>
+<g id="&#236;&#134;&#141;&#236;&#132;&#177; 1=selected">
+<g id="calender-date">
+<path d="M28 32C28 25.3726 33.3726 20 40 20C46.6274 20 52 25.3726 52 32C52 38.6274 46.6274 44 40 44C33.3726 44 28 38.6274 28 32Z" fill="#4678FD"/>
+<text id="1" fill="white" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="14" letter-spacing="0em"><tspan x="36.8623" y="36.9766">1</tspan></text>
+</g>
+</g>
+<g id="&#236;&#134;&#141;&#236;&#132;&#177; 1=default">
+<g id="calender-date_2">
+<text id="1_2" fill="#333333" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="14" letter-spacing="0em"><tspan x="36.8623" y="80.9766">1</tspan></text>
+</g>
+</g>
+<g id="&#236;&#134;&#141;&#236;&#132;&#177; 1=inactive">
+<g id="calender-date_3">
+<text id="1_3" fill="#CFCFCF" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="14" letter-spacing="0em"><tspan x="36.8623" y="124.977">1</tspan></text>
+</g>
+</g>
+<g id="&#236;&#134;&#141;&#236;&#132;&#177; 1=hover">
+<g id="calender-date_4">
+<path d="M28 164C28 157.373 33.3726 152 40 152C46.6274 152 52 157.373 52 164C52 170.627 46.6274 176 40 176C33.3726 176 28 170.627 28 164Z" fill="#3260DD"/>
+<text id="1_4" fill="white" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="14" letter-spacing="0em"><tspan x="36.8623" y="168.977">1</tspan></text>
+</g>
+</g>
+<g id="&#236;&#134;&#141;&#236;&#132;&#177; 1=recorded">
+<g id="calender-date_5">
+<path d="M28 208C28 201.373 33.3726 196 40 196C46.6274 196 52 201.373 52 208C52 214.627 46.6274 220 40 220C33.3726 220 28 214.627 28 208Z" fill="#EBFCB6"/>
+<text id="1_5" fill="#333333" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="14" letter-spacing="0em"><tspan x="36.8623" y="212.977">1</tspan></text>
+</g>
+</g>
+<g id="&#236;&#134;&#141;&#236;&#132;&#177; 1=recorded(left)">
+<path d="M20 252C20 245.373 25.3726 240 32 240H60V264H32C25.3726 264 20 258.627 20 252Z" fill="#EBFCB6"/>
+<g id="calender-date_6">
+<text id="1_6" fill="#333333" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="14" letter-spacing="0em"><tspan x="36.8623" y="256.977">1</tspan></text>
+</g>
+</g>
+<g id="&#236;&#134;&#141;&#236;&#132;&#177; 1=recorded(middle)">
+<rect width="40" height="24" transform="translate(20 284)" fill="#EBFCB6"/>
+<g id="calender-date_7">
+<text id="1_7" fill="#333333" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="14" letter-spacing="0em"><tspan x="36.8623" y="300.977">1</tspan></text>
+</g>
+</g>
+<g id="&#236;&#134;&#141;&#236;&#132;&#177; 1=recorded(right)">
+<path d="M20 328H48C54.6274 328 60 333.373 60 340C60 346.627 54.6274 352 48 352H20V328Z" fill="#EBFCB6"/>
+<g id="calender-date_8">
+<text id="1_8" fill="#333333" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="14" letter-spacing="0em"><tspan x="36.8623" y="344.977">1</tspan></text>
+</g>
+</g>
+</g>
+</svg>

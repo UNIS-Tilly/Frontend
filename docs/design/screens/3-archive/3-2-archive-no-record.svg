@@ -1,0 +1,317 @@
+<svg width="1440" height="900" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="3-2 archive-no-record" clip-path="url(#clip0_74_1145)">
+<rect width="1440" height="900" fill="#F5F5F5"/>
+<g id="Frame 2">
+<rect width="256" height="900" fill="white"/>
+<g id="Tilly">
+<path id="Vector" d="M116.23 43.6319C116.23 44.6985 115.997 45.6496 115.531 46.4854C115.065 47.3211 114.401 48.0295 113.54 48.6105C112.686 49.1836 111.648 49.6213 110.426 49.9238C109.212 50.2263 107.849 50.3775 106.339 50.3775C105.675 50.3775 104.976 50.3456 104.242 50.282C103.514 50.2263 102.801 50.1427 102.102 50.0313C101.41 49.9278 100.761 49.8084 100.154 49.6731C99.5466 49.5298 99.0347 49.3746 98.6182 49.2075V45.3153C99.07 45.5302 99.5713 45.7332 100.122 45.9242C100.68 46.1152 101.283 46.2864 101.933 46.4376C102.582 46.5809 103.278 46.6963 104.019 46.7838C104.768 46.8634 105.558 46.9032 106.391 46.9032C107.175 46.9032 107.864 46.8515 108.457 46.748C109.057 46.6445 109.576 46.5053 110.013 46.3301C110.451 46.155 110.815 45.9561 111.104 45.7332C111.394 45.5024 111.627 45.2676 111.803 45.0288C111.98 44.7821 112.103 44.5393 112.174 44.3005C112.251 44.0617 112.29 43.8389 112.29 43.6319V42.1873C111.57 42.7843 110.712 43.2777 109.717 43.6677C108.721 44.0498 107.588 44.2408 106.317 44.2408C104.842 44.2408 103.61 44.0816 102.621 43.7633C101.64 43.4369 100.853 42.9713 100.26 42.3664C99.6666 41.7535 99.243 41.0093 98.9888 40.1338C98.7417 39.2583 98.6182 38.2713 98.6182 37.1729V33.5315H102.568V36.7312C102.568 37.3759 102.642 37.9489 102.791 38.4504C102.946 38.9518 103.186 39.3737 103.511 39.7159C103.843 40.0502 104.27 40.3049 104.792 40.48C105.315 40.6551 105.947 40.7427 106.688 40.7427C107.316 40.7427 107.909 40.6551 108.467 40.48C109.032 40.3049 109.551 40.0741 110.024 39.7876C110.497 39.501 110.924 39.1747 111.305 38.8086C111.687 38.4424 112.015 38.0683 112.29 37.6863V33.5315H116.23V43.6319Z" fill="url(#paint0_linear_74_1145)"/>
+<path id="Vector_2" d="M66.9585 42.7302C66.9585 43.4012 67.0207 43.9513 67.1452 44.3804C67.2696 44.8017 67.4719 45.1372 67.752 45.3869C68.032 45.6366 68.3938 45.8082 68.8372 45.9018C69.2884 45.9955 69.8408 46.0423 70.4942 46.0423H78.7094V49.6118H69.6074C68.3471 49.6118 67.2735 49.5103 66.3867 49.3075C65.5076 49.0968 64.788 48.7769 64.2278 48.3478C63.6677 47.9109 63.2593 47.3608 63.0026 46.6976C62.7536 46.0345 62.6292 45.2464 62.6292 44.3336V33.5315H66.9585V42.7302Z" fill="black"/>
+<path id="Vector_3" d="M84.57 42.7302C84.57 43.4012 84.6323 43.9513 84.7567 44.3804C84.8812 44.8017 85.0835 45.1372 85.3635 45.3869C85.6436 45.6366 86.0053 45.8082 86.4488 45.9018C86.9 45.9955 87.4523 46.0423 88.1058 46.0423H96.321V49.6118H87.2189C85.9587 49.6118 84.8851 49.5103 83.9982 49.3075C83.1191 49.0968 82.3995 48.7769 81.8394 48.3478C81.2793 47.9109 80.8709 47.3608 80.6141 46.6976C80.3652 46.0345 80.2407 45.2464 80.2407 44.3336V33.5315H84.57V42.7302Z" fill="black"/>
+<path id="Vector_4" d="M53.4404 49.6117V38.1258H58.0348V49.6117H53.4404Z" fill="black"/>
+<path id="Vector_5" d="M53.4404 35.8286V32H58.0348V35.8286H53.4404Z" fill="#4678FD"/>
+<path id="Vector_6" d="M43.4141 36.7499V49.6117H38.9753V36.7499H32V33.1725H50.4014V36.7499H43.4141Z" fill="url(#paint1_linear_74_1145)"/>
+</g>
+<g id="Frame 1">
+<g id="menu">
+<g id="home">
+<path id="Vector_7" d="M62.3334 107.961V102.875C62.3334 102.386 62.3334 102.141 62.2738 101.913C62.2211 101.711 62.1343 101.52 62.0172 101.347C61.8842 101.152 61.7009 100.99 61.3315 100.668L56.9315 96.8178C56.2477 96.2192 55.9048 95.9195 55.5198 95.8058C55.1807 95.705 54.8195 95.705 54.4794 95.8058C54.0944 95.9195 53.7534 96.2183 53.0696 96.816L48.6687 100.668C48.3002 100.99 48.1159 101.152 47.9839 101.346C47.8664 101.519 47.7793 101.71 47.7263 101.913C47.6667 102.14 47.6667 102.386 47.6667 102.875V107.961C47.6667 108.815 47.6667 109.242 47.8061 109.579C47.8981 109.801 48.0331 110.003 48.2033 110.174C48.3734 110.344 48.5755 110.479 48.7979 110.571C49.1352 110.711 49.5624 110.711 50.4167 110.711C51.2711 110.711 51.6982 110.711 52.0356 110.571C52.258 110.479 52.4601 110.344 52.6302 110.174C52.8004 110.003 52.9354 109.801 53.0274 109.579C53.1667 109.242 53.1667 108.815 53.1667 107.961V107.044C53.1667 106.558 53.3599 106.092 53.7037 105.748C54.0475 105.404 54.5139 105.211 55.0001 105.211C55.4863 105.211 55.9526 105.404 56.2964 105.748C56.6403 106.092 56.8334 106.558 56.8334 107.044V107.961C56.8334 108.815 56.8334 109.242 56.9727 109.579C57.0648 109.801 57.1997 110.003 57.3699 110.174C57.5401 110.344 57.7422 110.479 57.9646 110.571C58.3019 110.711 58.7291 110.711 59.5834 110.711C60.4377 110.711 60.8649 110.711 61.2022 110.571C61.4247 110.479 61.6267 110.344 61.7969 110.174C61.9671 110.003 62.102 109.801 62.1941 109.579C62.3334 109.242 62.3334 108.815 62.3334 107.961Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="#333333"/>
+</g>
+<text id="&#237;&#153;&#136;" fill="#333333" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="16" letter-spacing="0em"><tspan x="78" y="109.065">&#xd648;</tspan></text>
+</g>
+<g id="menu_2">
+<g id="record">
+<path id="Vector_8" d="M47.9224 157.67L61.366 144.226C61.8971 143.718 62.6061 143.438 63.3412 143.446C64.0763 143.454 64.779 143.749 65.2989 144.269C65.8187 144.789 66.1145 145.491 66.1227 146.226C66.1309 146.961 65.851 147.67 65.3429 148.202L51.8972 161.646C51.5904 161.953 51.1998 162.162 50.7744 162.247L46.458 163.11L47.3215 158.793C47.4066 158.368 47.6157 157.977 47.9224 157.67Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="#333333"/>
+<path id="Vector_9" d="M58.134 146.557L61.8212 150.244" stroke-width="2" stroke="#333333"/>
+</g>
+<text id="&#237;&#153;&#136;_2" fill="#333333" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="16" letter-spacing="0em"><tspan x="78" y="159.065">&#xae30;&#xb85d;</tspan></text>
+</g>
+<g id="menu_3">
+<path d="M32 190.377C32 185.959 35.5817 182.377 40 182.377H216C220.418 182.377 224 185.959 224 190.377V216.377C224 220.796 220.418 224.377 216 224.377H40C35.5817 224.377 32 220.796 32 216.377V190.377Z" fill="#EDF1FC"/>
+<g id="archive">
+<path id="Vector_10" d="M47.395 199.032V209.896C47.395 210.472 47.6239 211.025 48.0314 211.432C48.4389 211.84 48.9916 212.069 49.5678 212.069H60.432C61.0083 212.069 61.561 211.84 61.9685 211.432C62.376 211.025 62.6049 210.472 62.6049 209.896V199.032M47.395 199.032H62.6049M47.395 199.032C46.8187 199.032 46.2661 198.803 45.8586 198.395C45.4511 197.988 45.2222 197.435 45.2222 196.859C45.2222 196.283 45.4511 195.73 45.8586 195.322C46.2661 194.915 46.8187 194.686 47.395 194.686H62.6049C63.1812 194.686 63.7338 194.915 64.1413 195.322C64.5488 195.73 64.7777 196.283 64.7777 196.859C64.7777 197.435 64.5488 197.988 64.1413 198.395C63.7338 198.803 63.1812 199.032 62.6049 199.032M52.8271 203.377H57.1728" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="#3260DD"/>
+</g>
+<text id="&#237;&#153;&#136;_3" fill="#3260DD" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="16" letter-spacing="0em"><tspan x="78" y="209.065">&#xc544;&#xce74;&#xc774;&#xbe0c;</tspan></text>
+</g>
+<g id="menu_4">
+<g id="insight">
+<path id="Vector_11" d="M53.1666 262.544H56.8333M51.3333 256.127H58.6666M48.5833 250.627C48.5833 248.926 49.2593 247.294 50.4627 246.09C51.666 244.887 53.2981 244.211 54.9999 244.211C56.7017 244.211 58.3338 244.887 59.5372 246.09C60.7405 247.294 61.4166 248.926 61.4166 250.627C61.4173 251.661 61.1675 252.679 60.6886 253.594C60.2096 254.51 59.5158 255.295 58.6666 255.884L58.1698 258.236C58.104 258.669 57.885 259.065 57.5525 259.351C57.22 259.637 56.796 259.794 56.3575 259.794H53.6423C53.2038 259.794 52.7799 259.637 52.4474 259.351C52.1149 259.065 51.8959 258.669 51.8301 258.236L51.3333 255.894C50.4838 255.303 49.7899 254.516 49.311 253.599C48.8321 252.681 48.5824 251.662 48.5833 250.627Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="#333333"/>
+</g>
+<text id="&#237;&#153;&#136;_4" fill="#333333" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="16" letter-spacing="0em"><tspan x="78" y="259.065">&#xc778;&#xc0ac;&#xc774;&#xd2b8;</tspan></text>
+</g>
+<g id="menu_5">
+<g id="setting">
+<path id="Vector_12" d="M51.8562 314.377C50.0369 313.812 48.3892 312.767 47.0734 311.342C47.4967 310.82 47.7606 310.178 47.8313 309.499C47.902 308.82 47.7763 308.134 47.4702 307.529C47.1641 306.925 46.6917 306.429 46.1133 306.106C45.5348 305.782 44.8768 305.645 44.2233 305.713C44.0741 304.955 43.9993 304.182 44 303.408C44 302.212 44.176 301.058 44.5038 299.975H44.55C45.1109 299.975 45.6625 299.826 46.1529 299.543C46.6432 299.26 47.0561 298.851 47.3525 298.356C47.649 297.86 47.8191 297.295 47.847 296.712C47.8748 296.129 47.7595 295.549 47.5118 295.025C48.8017 293.776 50.361 292.868 52.0586 292.377C52.3349 292.942 52.7559 293.416 53.275 293.747C53.7942 294.078 54.3912 294.253 55 294.253C55.6088 294.253 56.2058 294.078 56.725 293.747C57.2441 293.416 57.6651 292.942 57.9414 292.377C59.639 292.868 61.1983 293.776 62.4882 295.025C62.2387 295.552 62.1234 296.137 62.1534 296.724C62.1834 297.311 62.3577 297.88 62.6595 298.376C62.9614 298.873 63.3807 299.281 63.8774 299.561C64.374 299.84 64.9314 299.983 65.4962 299.975C65.831 301.086 66.0009 302.243 66 303.408C66 304.197 65.923 304.969 65.7767 305.714C65.1232 305.646 64.4652 305.783 63.8867 306.106C63.3083 306.43 62.8359 306.926 62.5298 307.53C62.2237 308.135 62.098 308.82 62.1687 309.5C62.2394 310.179 62.5033 310.821 62.9266 311.343C61.6108 312.767 59.9631 313.812 58.1438 314.377C57.9302 313.685 57.5106 313.08 56.9456 312.652C56.3806 312.223 55.6993 311.992 55 311.992C54.3007 311.992 53.6194 312.223 53.0544 312.652C52.4894 313.08 52.0698 313.685 51.8562 314.377Z" stroke-width="2" stroke-linejoin="round" stroke="#333333"/>
+<path id="Vector_13" d="M54.9999 307.413C55.5055 307.413 56.0061 307.31 56.4732 307.108C56.9403 306.907 57.3648 306.612 57.7223 306.24C58.0798 305.868 58.3634 305.427 58.5568 304.941C58.7503 304.455 58.8499 303.934 58.8499 303.408C58.8499 302.882 58.7503 302.361 58.5568 301.875C58.3634 301.389 58.0798 300.947 57.7223 300.576C57.3648 300.204 56.9403 299.909 56.4732 299.707C56.0061 299.506 55.5055 299.402 54.9999 299.402C53.9788 299.402 52.9996 299.824 52.2775 300.576C51.5555 301.327 51.1499 302.345 51.1499 303.408C51.1499 304.47 51.5555 305.489 52.2775 306.24C52.9996 306.991 53.9788 307.413 54.9999 307.413Z" stroke-width="2" stroke-linejoin="round" stroke="#333333"/>
+</g>
+<text id="&#237;&#153;&#136;_5" fill="#333333" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="16" letter-spacing="0em"><tspan x="78" y="309.065">&#xd658;&#xacbd; &#xc124;&#xc815;</tspan></text>
+</g>
+</g>
+</g>
+<g id="Frame 14">
+<path d="M280 120C280 111.163 287.163 104 296 104H576C584.837 104 592 111.163 592 120V459C592 467.837 584.837 475 576 475H296C287.163 475 280 467.837 280 459V120Z" fill="white"/>
+<g id="Frame 13">
+<g id="akar-icons:chevron-right">
+<path id="Vector_14" d="M322.833 147.167L318.167 142.5L322.833 137.833" stroke-linecap="round" stroke-linejoin="round" stroke="#666666"/>
+</g>
+<text id="2026&#235;&#133;&#132; 11&#236;&#155;&#148;" fill="#333333" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="18" letter-spacing="0em"><tspan x="387.5" y="148.898">2026&#xb144; 11&#xc6d4;</tspan></text>
+<g id="akar-icons:chevron-right_2">
+<path id="Vector_15" d="M549.167 137.833L553.833 142.5L549.167 147.167" stroke-linecap="round" stroke-linejoin="round" stroke="#666666"/>
+</g>
+</g>
+<g id="Frame 12">
+<g id="Frame 5">
+<text id="&#236;&#157;&#188;" fill="#666666" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="12" letter-spacing="0em"><tspan x="310.814" y="194.766">&#xc77c;</tspan></text>
+<text id="&#236;&#155;&#148;" fill="#666666" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="12" letter-spacing="0em"><tspan x="350.814" y="194.766">&#xc6d4;</tspan></text>
+<text id="&#237;&#153;&#148;" fill="#666666" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="12" letter-spacing="0em"><tspan x="390.814" y="194.766">&#xd654;</tspan></text>
+<text id="&#236;&#136;&#152;" fill="#666666" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="12" letter-spacing="0em"><tspan x="430.814" y="194.766">&#xc218;</tspan></text>
+<text id="&#235;&#170;&#169;" fill="#666666" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="12" letter-spacing="0em"><tspan x="470.814" y="194.766">&#xbaa9;</tspan></text>
+<text id="&#234;&#184;&#136;" fill="#666666" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="12" letter-spacing="0em"><tspan x="510.814" y="194.766">&#xae08;</tspan></text>
+<text id="&#237;&#134;&#160;" fill="#666666" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="12" letter-spacing="0em"><tspan x="550.814" y="194.766">&#xd1a0;</tspan></text>
+</g>
+<g id="Frame 11">
+<g id="Frame 79">
+<g id="Frame 72">
+<g id="calender-date">
+<text id="1" fill="#333333" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="14" letter-spacing="0em"><tspan x="312.862" y="232.977">1</tspan></text>
+</g>
+</g>
+<g id="Frame 73">
+<g id="calender-date_2">
+<text id="1_2" fill="#333333" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="14" letter-spacing="0em"><tspan x="351.837" y="232.977">2</tspan></text>
+</g>
+</g>
+<g id="Frame 74">
+<g id="calender-date_3">
+<text id="1_3" fill="#333333" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="14" letter-spacing="0em"><tspan x="391.632" y="232.977">3</tspan></text>
+</g>
+</g>
+<g id="Frame 75">
+<path d="M416 228C416 221.373 421.373 216 428 216H456V240H428C421.373 240 416 234.627 416 228Z" fill="#EBFCB6"/>
+<g id="calender-date_4">
+<text id="1_4" fill="#333333" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="14" letter-spacing="0em"><tspan x="431.557" y="232.977">4</tspan></text>
+</g>
+</g>
+<g id="Frame 76">
+<rect width="40" height="24" transform="translate(456 216)" fill="#EBFCB6"/>
+<g id="calender-date_5">
+<text id="1_5" fill="#333333" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="14" letter-spacing="0em"><tspan x="471.755" y="232.977">5</tspan></text>
+</g>
+</g>
+<g id="Frame 77">
+<path d="M496 216H524C530.627 216 536 221.373 536 228C536 234.627 530.627 240 524 240H496V216Z" fill="#EBFCB6"/>
+<g id="calender-date_6">
+<text id="1_6" fill="#333333" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="14" letter-spacing="0em"><tspan x="511.639" y="232.977">6</tspan></text>
+</g>
+</g>
+<g id="Frame 78">
+<g id="calender-date_7">
+<text id="1_7" fill="#333333" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="14" letter-spacing="0em"><tspan x="552.083" y="232.977">7</tspan></text>
+</g>
+</g>
+</g>
+<g id="Frame 80">
+<g id="Frame 72_2">
+<g id="calender-date_8">
+<text id="1_8" fill="#333333" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="14" letter-spacing="0em"><tspan x="311.673" y="272.977">8</tspan></text>
+</g>
+</g>
+<g id="Frame 73_2">
+<g id="calender-date_9">
+<path d="M344 268C344 261.373 349.373 256 356 256C362.627 256 368 261.373 368 268C368 274.627 362.627 280 356 280C349.373 280 344 274.627 344 268Z" fill="#4678FD"/>
+<text id="1_9" fill="white" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="14" letter-spacing="0em"><tspan x="351.639" y="272.977">9</tspan></text>
+</g>
+</g>
+<g id="Frame 74_2">
+<g id="calender-date_10">
+<text id="1_10" fill="#333333" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="14" letter-spacing="0em"><tspan x="388.542" y="272.977">10</tspan></text>
+</g>
+</g>
+<g id="Frame 75_2">
+<g id="calender-date_11">
+<text id="1_11" fill="#333333" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="14" letter-spacing="0em"><tspan x="429.725" y="272.977">11</tspan></text>
+</g>
+</g>
+<g id="Frame 76_2">
+<g id="calender-date_12">
+<text id="1_12" fill="#333333" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="14" letter-spacing="0em"><tspan x="468.699" y="272.977">12</tspan></text>
+</g>
+</g>
+<g id="Frame 77_2">
+<g id="calender-date_13">
+<text id="1_13" fill="#333333" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="14" letter-spacing="0em"><tspan x="508.494" y="272.977">13</tspan></text>
+</g>
+</g>
+<g id="Frame 78_2">
+<g id="calender-date_14">
+<text id="1_14" fill="#333333" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="14" letter-spacing="0em"><tspan x="548.419" y="272.977">14</tspan></text>
+</g>
+</g>
+</g>
+<g id="Frame 81">
+<g id="Frame 72_3">
+<g id="calender-date_15">
+<text id="1_15" fill="#333333" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="14" letter-spacing="0em"><tspan x="308.617" y="312.977">15</tspan></text>
+</g>
+</g>
+<g id="Frame 73_3">
+<g id="calender-date_16">
+<text id="1_16" fill="#333333" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="14" letter-spacing="0em"><tspan x="348.501" y="312.977">16</tspan></text>
+</g>
+</g>
+<g id="Frame 74_3">
+<g id="calender-date_17">
+<text id="1_17" fill="#333333" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="14" letter-spacing="0em"><tspan x="388.945" y="312.977">17</tspan></text>
+</g>
+</g>
+<g id="Frame 75_3">
+<g id="calender-date_18">
+<text id="1_18" fill="#333333" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="14" letter-spacing="0em"><tspan x="428.535" y="312.977">18</tspan></text>
+</g>
+</g>
+<g id="Frame 76_3">
+<g id="calender-date_19">
+<text id="1_19" fill="#333333" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="14" letter-spacing="0em"><tspan x="468.501" y="312.977">19</tspan></text>
+</g>
+</g>
+<g id="Frame 77_3">
+<g id="calender-date_20">
+<text id="1_20" fill="#333333" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="14" letter-spacing="0em"><tspan x="507.517" y="312.977">20</tspan></text>
+</g>
+</g>
+<g id="Frame 78_3">
+<g id="calender-date_21">
+<text id="1_21" fill="#333333" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="14" letter-spacing="0em"><tspan x="548.699" y="312.977">21</tspan></text>
+</g>
+</g>
+</g>
+<g id="Frame 82">
+<g id="Frame 72_4">
+<g id="calender-date_22">
+<text id="1_22" fill="#333333" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="14" letter-spacing="0em"><tspan x="307.674" y="352.977">22</tspan></text>
+</g>
+</g>
+<g id="Frame 73_4">
+<g id="calender-date_23">
+<text id="1_23" fill="#333333" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="14" letter-spacing="0em"><tspan x="347.469" y="352.977">23</tspan></text>
+</g>
+</g>
+<g id="Frame 74_4">
+<g id="calender-date_24">
+<text id="1_24" fill="#333333" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="14" letter-spacing="0em"><tspan x="387.496" y="352.977">24</tspan></text>
+</g>
+</g>
+<g id="Frame 75_4">
+<g id="calender-date_25">
+<text id="1_25" fill="#333333" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="14" letter-spacing="0em"><tspan x="427.592" y="352.977">25</tspan></text>
+</g>
+</g>
+<g id="Frame 76_4">
+<g id="calender-date_26">
+<text id="1_26" fill="#333333" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="14" letter-spacing="0em"><tspan x="467.476" y="352.977">26</tspan></text>
+</g>
+</g>
+<g id="Frame 77_4">
+<g id="calender-date_27">
+<text id="1_27" fill="#333333" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="14" letter-spacing="0em"><tspan x="507.92" y="352.977">27</tspan></text>
+</g>
+</g>
+<g id="Frame 78_4">
+<g id="calender-date_28">
+<text id="1_28" fill="#333333" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="14" letter-spacing="0em"><tspan x="547.51" y="352.977">28</tspan></text>
+</g>
+</g>
+</g>
+<g id="Frame 83">
+<g id="Frame 72_5">
+<g id="calender-date_29">
+<text id="1_29" fill="#333333" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="14" letter-spacing="0em"><tspan x="307.476" y="392.977">29</tspan></text>
+</g>
+</g>
+<g id="Frame 73_5">
+<g id="calender-date_30">
+<text id="1_30" fill="#333333" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="14" letter-spacing="0em"><tspan x="347.312" y="392.977">30</tspan></text>
+</g>
+</g>
+<g id="Frame 74_5">
+<g id="calender-date_31">
+<text id="1_31" fill="#CFCFCF" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="14" letter-spacing="0em"><tspan x="392.862" y="392.977">1</tspan></text>
+</g>
+</g>
+<g id="Frame 75_5">
+<g id="calender-date_32">
+<text id="1_32" fill="#CFCFCF" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="14" letter-spacing="0em"><tspan x="431.837" y="392.977">2</tspan></text>
+</g>
+</g>
+<g id="Frame 76_5">
+<g id="calender-date_33">
+<text id="1_33" fill="#CFCFCF" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="14" letter-spacing="0em"><tspan x="471.632" y="392.977">3</tspan></text>
+</g>
+</g>
+<g id="Frame 77_5">
+<g id="calender-date_34">
+<text id="1_34" fill="#CFCFCF" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="14" letter-spacing="0em"><tspan x="511.557" y="392.977">4</tspan></text>
+</g>
+</g>
+<g id="Frame 78_5">
+<g id="calender-date_35">
+<text id="1_35" fill="#CFCFCF" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="14" letter-spacing="0em"><tspan x="551.755" y="392.977">5</tspan></text>
+</g>
+</g>
+</g>
+</g>
+</g>
+<g id="Frame 87">
+<g id="Frame 85">
+<circle id="Ellipse 1" cx="355.5" cy="433.5" r="5.5" fill="#EBFCB6"/>
+<text id="&#234;&#184;&#176;&#235;&#161;&#157;&#237;&#149;&#156; &#235;&#130;&#160;&#236;&#167;&#156;" fill="#333333" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="12" letter-spacing="0em"><tspan x="369.066" y="437.766">&#xae30;&#xb85d;&#xd55c; &#xb0a0;&#xc9dc;</tspan></text>
+</g>
+<g id="Frame 86">
+<circle id="Ellipse 1_2" cx="453.5" cy="433.5" r="5.5" fill="#4678FD"/>
+<text id="&#236;&#132;&#160;&#237;&#131;&#157;&#237;&#149;&#156; &#235;&#130;&#160;&#236;&#167;&#156;" fill="#333333" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="12" letter-spacing="0em"><tspan x="467.066" y="437.766">&#xc120;&#xd0dd;&#xd55c; &#xb0a0;&#xc9dc;</tspan></text>
+</g>
+</g>
+</g>
+<g id="Frame 89">
+<path d="M617 120C617 111.163 624.163 104 633 104H1384C1392.84 104 1400 111.163 1400 120V315C1400 323.837 1392.84 331 1384 331H633C624.163 331 617 323.837 617 315V120Z" fill="white"/>
+<g id="Frame 88">
+<g id="Frame 55">
+<g id="akar-icons:chevron-right_3">
+<path id="Vector_16" d="M683.667 147.333L678.333 142L683.667 136.667" stroke-linecap="round" stroke-linejoin="round" stroke="#666666"/>
+</g>
+<text id="11&#236;&#155;&#148; 9&#236;&#157;&#188; (&#236;&#155;&#148;)" fill="black" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="20" letter-spacing="0em"><tspan x="954.5" y="149.109">11&#xc6d4; 9&#xc77c; (&#xc6d4;)</tspan></text>
+<g id="akar-icons:chevron-right_4">
+<path id="Vector_17" d="M1333.33 136.667L1338.67 142L1333.33 147.333" stroke-linecap="round" stroke-linejoin="round" stroke="#666666"/>
+</g>
+</g>
+<text id="&#237;&#149;&#180;&#235;&#139;&#185; &#235;&#130;&#160;&#236;&#167;&#156;&#236;&#151;&#144; &#236;&#158;&#145;&#236;&#132;&#177;&#235;&#144;&#156; &#234;&#184;&#176;&#235;&#161;&#157;&#236;&#157;&#180; &#236;&#151;&#134;&#236;&#138;&#181;&#235;&#139;&#136;&#235;&#139;&#164;." fill="#666666" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="18" letter-spacing="0em"><tspan x="880.663" y="216.898">&#xd574;&#xb2f9; &#xb0a0;&#xc9dc;&#xc5d0; &#xc791;&#xc131;&#xb41c; &#xae30;&#xb85d;&#xc774; &#xc5c6;&#xc2b5;&#xb2c8;&#xb2e4;.</tspan></text>
+</g>
+<g id="button">
+<path d="M649 281C649 272.163 656.163 265 665 265H1352C1360.84 265 1368 272.163 1368 281V291C1368 299.837 1360.84 307 1352 307H665C656.163 307 649 299.837 649 291V281Z" fill="#4678FD"/>
+<text id="&#234;&#184;&#176;&#235;&#161;&#157; &#236;&#153;&#132;&#235;&#163;&#140;&#237;&#149;&#152;&#234;&#184;&#176;" fill="white" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="16" letter-spacing="0em"><tspan x="980.844" y="291.688">&#xae30;&#xb85d;&#xd558;&#xae30;</tspan></text>
+</g>
+</g>
+<g id="top bar">
+<rect width="1184" height="82" transform="translate(256)" fill="white"/>
+<text id="&#237;&#153;&#136;_6" fill="#333333" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="24" letter-spacing="0em"><tspan x="296" y="49.5312">&#xc544;&#xce74;&#xc774;&#xbe0c;</tspan></text>
+<g id="notification">
+<g id="Group">
+<path id="Vector_18" d="M1350.25 48.5834C1350.25 49.4453 1349.91 50.272 1349.3 50.8815C1348.69 51.491 1347.86 51.8334 1347 51.8334C1346.14 51.8334 1345.31 51.491 1344.7 50.8815C1344.09 50.272 1343.75 49.4453 1343.75 48.5834M1347.78 33.42L1346.19 33.4167C1342.57 33.408 1339.43 36.3515 1339.4 39.9167V44.0225C1339.4 44.8784 1339.29 45.7136 1338.83 46.4254L1338.51 46.8999C1338.04 47.6192 1338.55 48.5834 1339.4 48.5834H1354.6C1355.45 48.5834 1355.96 47.6192 1355.49 46.8999L1355.17 46.4254C1354.71 45.7136 1354.6 44.8773 1354.6 44.0215V39.9178C1354.56 36.3515 1351.4 33.4286 1347.78 33.42Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="#333333"/>
+<path id="Vector_19" d="M1347 30.1667C1347.57 30.1667 1348.13 30.395 1348.53 30.8013C1348.94 31.2076 1349.17 31.7587 1349.17 32.3334V33.4167H1344.83V32.3334C1344.83 31.7587 1345.06 31.2076 1345.47 30.8013C1345.87 30.395 1346.43 30.1667 1347 30.1667Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="#333333"/>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<linearGradient id="paint0_linear_74_1145" x1="102.83" y1="46.5488" x2="99.001" y2="48.846" gradientUnits="userSpaceOnUse">
+<stop/>
+<stop offset="1" stop-color="#4678FD"/>
+</linearGradient>
+<linearGradient id="paint1_linear_74_1145" x1="41.1887" y1="42.7202" x2="41.2007" y2="49.6117" gradientUnits="userSpaceOnUse">
+<stop/>
+<stop offset="1" stop-color="#4678FD"/>
+</linearGradient>
+<clipPath id="clip0_74_1145">
+<rect width="1440" height="900" fill="white"/>
+</clipPath>
+</defs>
+</svg>
