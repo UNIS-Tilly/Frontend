@@ -17,6 +17,99 @@
 
 ---
 
+### 2026-11-12 / `feature/user-keywords` / ⚠️ 호환 깨짐 / 출생연도(`birthYear`) → 나이(`age`)
+
+- 회원 프로필의 `birthYear` 필드가 **없어지고 `age`(number | null)로 바뀌었습니다** ⚠️
+  - 요청: `POST /api/auth/register`, `PUT /api/users/me/profile`의 `birthYear` → `age` (예: `"age": 25`). 선택 항목(생략·`null` 허용)인 것은 같습니다
+  - 응답: `GET /api/users/me`, `PUT /api/users/me/profile` 응답의 `birthYear` → `age`
+  - 범위 **14~100**(임시), 벗어나면 `400 BAD_REQUEST`
+  - 입력한 나이를 그대로 저장합니다(해가 바뀌어도 자동으로 늘지 않음). 나이를 따로 계산할 필요 없이 그대로 표시하면 됩니다
+- 이전에 `birthYear`를 보내던 요청은 그 값이 무시됩니다(에러는 아님)
+- 기존에 저장된 출생연도는 `2026 − 출생연도`로 바뀌었습니다(개발 데이터)
+
+**프론트 조치**: 가입·프로필 입력 화면의 출생연도 입력을 나이 입력으로 바꾸고, 요청·응답 필드를 `age`로 교체.
+
+---
+
+### 2026-11-12 / `feature/user-keywords` / ⚠️ 호환 깨짐 / 할 일 마감일 → 마감 일시(날짜 + 시간)
+
+- 할 일의 `dueDate`가 **날짜에서 일시로** 바뀌었습니다 ⚠️ (필드 이름은 그대로)
+  - **요청**(`POST /api/tasks`, `PATCH /api/tasks/{taskId}`): `"2026-10-23T18:00"` 형식, **시간 필수**. 초를 붙여 보내도(`"2026-10-23T18:00:45"`) 되지만 **분 단위로 버려** 저장합니다. 오프셋 없이 서울 시간
+  - 날짜만 보내면(`"2026-10-23"`) **`400 BAD_REQUEST`** ⚠️. 생략·`null`이면 "마감 없음"(이전과 같음), PATCH에서 `null`은 해제(이전과 같음)
+  - **응답**(`GET /api/tasks` 목록 항목, POST/PATCH 응답): `"2026-10-23T18:00:00"`(초까지, 오프셋 없음 — 기록 API 시각 형식과 같음). 마감이 없으면 `null`
+- `overdueDays`(D+n)는 **이전과 같이 날짜 기준**입니다: `조회일 − 마감 날짜`. 마감 당일에는 시각이 지나도 지연이 아닙니다(시각은 표시용)
+- 기존에 날짜만 저장된 마감은 그날 `23:59:00`으로 바뀌었습니다(개발 데이터)
+
+**프론트 조치**: 마감 입력 UI에 시간 선택 추가, 요청에 `YYYY-MM-DDTHH:mm` 전송, 응답의 `dueDate`를 일시로 파싱·표시.
+
+---
+
+### 2026-11-12 / `feature/user-keywords` / 변경 / 직군·역량 키워드 확정 목록 적용 (+ 역량 정의 필드 추가)
+
+- 직군·역량 선택지가 **기획 확정 목록**으로 바뀌었습니다: 직군 13개, 역량 77개(공통 9개 + 직군별). 이전 임시 코드(`DEVELOPMENT`, `DATA`, `COMMUNICATION`, `DSN_UX` 등)는 더 이상 없습니다 ⚠️
+  - 코드는 항상 `GET /api/meta/profile-options`에서 받아 쓰고 하드코딩하지 마세요(표시명 `label`도 이 응답 값 사용)
+  - 여러 직군에 같은 표시명(예: "분석력")이 있어 코드는 직군 접두어로 구분됩니다(예: `MKT_ANALYSIS`, `HR_ANALYSIS`)
+- `GET /api/meta/profile-options`의 `competencies[]`에 **`description`(역량 정의 문장)** 필드가 추가되었습니다. 선택 화면에서 설명으로 쓸 수 있습니다 (필드 추가, 기존 필드 변경 없음)
+- 선택 규칙은 그대로입니다: 공통 역량 1개 이상, 희망 직군을 고르면 그 직군 역량 2개 이상
+- 예전 임시 코드로 저장된 직군은 비워지고 역량은 삭제됩니다(개발 데이터만 해당). 해당 회원은 `competencies`가 `[]`가 되어 프로필 입력 화면으로 안내하면 됩니다
+- 성별 목록은 아직 임시(남성/여성/기타)입니다
+
+**프론트 조치**: 직군·역량을 하드코딩했다면 선택지 API 값으로 교체, 필요하면 역량 설명(`description`) 표시.
+
+---
+
+### 2026-11-12 / `feature/record` / ⚠️ 호환 깨짐 / 기록·아카이브 구현 (기록 P-02, 아카이브 P-03, 홈 기록 카드)
+
+아래 "기획 변경 반영" 항목 2)·3)이 **구현되었습니다**(PR 머지 후 사용 가능). 전부 인증 필요. `{date}`는 `YYYY-MM-DD`, 시각은 `2026-10-21T18:05:00`(초 단위, 오프셋 없음, 서울 시간).
+
+- **`GET /api/records/{date}`는 없습니다** ⚠️ (회고 삭제, 기록 API 분해). 기록 화면 = 상단 `GET /api/tasks?date=`(할 일+메모) + 하단 `GET /api/records/{date}/questions`(질문·답변)
+- `GET /api/records/{date}/summary` — `{ date, status: "NOT_STARTED"|"DRAFT"|"COMPLETED", locked, memoCount, completedAt }`
+  - `memoCount`: 그날 보이는 할 일 중 메모가 있는 개수. `locked`: 지금은 항상 `false`(인사이트 PR에서 발행된 주면 `true`, 그때 읽기 전용 화면으로)
+- `GET /api/records/{date}/questions` — `{ date, questions: [{ id, order(1~3), text, answer, skipped }] }`. 질문이 없으면 `[]`. **질문 생성(질문 받기·퇴근 10분 전 자동 생성)은 아직 없습니다**(AI 연동 PR). 생성되면 기록 화면에서 이 API를 주기적으로 조회(폴링)해 주세요
+- `PUT /api/records/{date}/draft` — 임시저장(버튼) / 자동저장
+  - 요청: `{ "manual": true|false, "taskMemos": [{ "taskId", "memo" }], "answers": [{ "questionId", "answer", "skipped" }] }` (`manual` 필수, ⚠️ `reflection` 없음)
+  - 응답: `{ date, status, savedAt }`
+  - **현재 화면의 입력 전체를 보내 주세요(전체 교체)**:
+    - 메모: 그날 보이는 할 일 중 `taskMemos`에 없는 할 일의 메모는 **삭제**됩니다. 그날 보이지 않는 할 일(예: 다른 날 완료한 할 일)의 메모는 그대로입니다. 빈 문자열은 "메모 없음"
+    - 답변: 그날 질문 중 `answers`에 없는 질문은 **답 없음·건너뜀 아님으로 초기화**됩니다
+  - 상태: `manual: true` → `DRAFT`(완료된 날은 `COMPLETED` 유지). `manual: false`(자동저장)는 내용만 저장하고 상태를 바꾸지 않습니다 → 자동저장만 한 날은 `NOT_STARTED`. 저장된 적 없는 날에 내용이 전부 비어 있으면 기록을 만들지 않습니다
+  - 메모는 할 일에 붙어 있어서, 이월된 할 일의 메모는 어느 날 화면에서 고쳐도 같은 메모가 바뀝니다
+  - 요청은 겹치지 않게 순서대로 보내 주세요(버전 필드 없음)
+- `POST /api/records/{date}/complete` — 퇴근. 요청 본문은 임시저장과 같고 `manual`만 없음(`{}`도 가능, 빈 기록도 완료됨)
+  - 응답: `{ date, status: "COMPLETED", completedAt, level }` — `level`은 갱신된 성장 레벨(퇴근 완료한 날 수 기준, 구간은 임시). 이미 완료된 날을 다시 완료하면 저장만 하고 `completedAt`·레벨은 그대로
+- `GET /api/archive/calendar?year=2026&month=10` ⚠️ — `{ year, month, days: [{ date, hasRecord }] }`, **그 달의 모든 날짜**. `hasRecord`는 임시저장 버튼을 누른 날 또는 퇴근 완료한 날(자동저장만 한 날은 `false`). 상태별 구분이 필요하면 `summary`를 사용
+- **에러**: `400 BAD_REQUEST`(날짜 형식, 메모 500자·답변 1,000자 초과, `manual` 누락, 같은 `taskId`/`questionId` 중복, `month` 범위 밖·누락), `404 TASK_NOT_FOUND`(그날 보이지 않거나 다른 사람의 할 일), `404 QUESTION_NOT_FOUND`(그날 기록에 없는 질문), `401`. `409 RECORD_LOCKED`는 인사이트 PR 이후
+
+**프론트 조치**: 기록 화면을 할 일 목록 + 질문 조회로 나눠 불러오기, 회고 입력 제거, 저장할 때 화면의 메모·답변을 항상 전부 보내기, 퇴근 응답의 `level`로 레벨 이미지 갱신, 아카이브 달력을 `hasRecord`로 표시.
+
+---
+
+### 2026-11-12 / `feature/user-profile` / ⚠️ 호환 깨짐 / 회원 프로필 구현 (가입, 회원수정 페이지 1, 환경 설정)
+
+아래 "기획 변경 반영" 항목 4)가 **구현되었습니다**(PR 머지 후 사용 가능).
+
+- **`PATCH /api/users/me/nickname` 삭제** ⚠️ → 닉네임은 아래 `PUT /api/users/me/profile`로 수정합니다
+- `GET /api/users/me` (인증) — 응답에 필드 추가:
+  `{ nickname, email, workEndTime, gender, birthYear, currentJobGroup, targetJobGroup, competencies: ["COMMUNICATION", ...], level }`
+  - 값이 없는 선택 항목은 `null`, `competencies`는 비어 있으면 `[]` → **`[]`이면 가입 직후 프로필 입력(직군·역량) 전**으로 판단해 주세요
+  - `level`: 성장 레벨 1~9 (가입 직후 1). 지금은 항상 1이고, 기록 완료 기능(record PR)이 들어가면 오릅니다. 이미지는 프론트가 레벨 숫자로 매핑
+  - `competencies` 순서: 선택지 API의 순서(공통 → 직군별)
+- `PUT /api/users/me/profile` (인증, 신규) — 회원수정 페이지 1과 가입 직후 프로필 입력에서 같이 사용. **전체 교체**: 안 보낸 선택 항목은 해제됩니다
+  - 요청: `{ "nickname": "2~10자", "gender": "FEMALE"|null, "birthYear": 2001|null, "currentJobGroup": "DEVELOPMENT"|null, "targetJobGroup": "DESIGN"|null, "competencies": ["COMMUNICATION", "DSN_UX", "DSN_PROTOTYPING"] }`
+  - 응답: `GET /api/users/me`와 같은 형식(수정 후 전체)
+  - 역량 규칙: 공통 역량 1개 이상 필수 / 희망 직군을 고르면 **그 직군 역량** 2개 이상 필수 / 희망 직군이 없으면 직군 역량 선택 불가 / 중복 불가. 위반 시 `400 INVALID_COMPETENCY_SELECTION`(실패 시 아무것도 저장되지 않음). 최대 개수 제한은 아직 없음(기획 확정 대기)
+  - `400 BAD_REQUEST`: 닉네임 길이, 출생연도 범위(1950~올해, 임시), 없는 코드 값(성별·직군·역량)
+  - 희망 직군을 바꾸면 역량도 새 직군 기준으로 함께 보내야 합니다
+- `GET /api/meta/profile-options` (인증, 신규) — 선택지
+  `{ genders: [{code, label}], jobGroups: [{code, label}], competencies: [{code, label, type: "COMMON"|"JOB", jobGroup: null|"DESIGN"…}], selectionRules: { commonMin: 1, jobMin: 2 } }`
+  - **키워드·표시 문구는 임시**입니다. 화면에 하드코딩하지 말고 이 API 값을 써 주세요
+- `POST /api/auth/register` — 선택 필드 `gender`, `birthYear` 추가. 안 보내면 기존과 동일하게 동작(토큰·쿠키 흐름 변경 없음). 없는 성별 값이나 범위 밖 출생연도는 `400`
+- 변경 없음: `PUT /api/users/me/work-end-time`(회원수정 페이지 2), `POST /api/users/me/withdrawal`(이메일 입력 후 탈퇴, 역량도 함께 삭제)
+
+**프론트 조치**: 닉네임 수정 화면을 `PUT /users/me/profile`로 교체, 가입 화면에 성별·출생연도(선택), 가입 직후 직군·역량 입력 화면(선택지 API 사용), `competencies`가 `[]`면 프로필 입력 화면으로 안내.
+
+---
+
 ### 2026-11-12 / `feature/task` / ⚠️ 호환 깨짐 / 할 일 새 모델 구현 (홈 체크리스트 P-01, 기록 화면 상단 P-02, 아카이브 날짜 상세)
 
 아래 "기획 변경 반영" 항목 1)의 할 일 부분이 **구현되었습니다**(PR 머지 후 사용 가능). 전부 인증 필요(`Authorization: Bearer {accessToken}`). 날짜는 `YYYY-MM-DD`.
