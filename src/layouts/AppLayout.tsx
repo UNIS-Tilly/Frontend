@@ -7,6 +7,7 @@ import {
   RecordIcon,
   SettingsIcon,
 } from '../components/MenuIcons'
+import NotificationBell from '../components/NotificationBell'
 
 // 왼쪽 사이드바에 보여줄 메뉴. 기능명세서의 1depth 순서와 같다. (PC 1440px 기준 디자인이라 모바일 탭은 없다)
 const MENUS = [
@@ -54,9 +55,11 @@ export default function AppLayout() {
       </aside>
 
       <div className="min-w-0 flex-1">
-        {/* 상단 바: 화면 이름. 시안의 알림(종) 아이콘은 역할이 확정되지 않아(CLAUDE.md 12장) 아직 만들지 않았다 */}
-        <header className="flex h-[82px] items-center bg-white px-2xl">
+        {/* 상단 바: 화면 이름(왼쪽) + 알림 종 아이콘(오른쪽, 시안 x1335~1359 → 오른쪽 여백 81px).
+            알림은 아직 mock 이다(NotificationBell 참고). */}
+        <header className="flex h-[82px] items-center justify-between bg-white pr-[81px] pl-2xl">
           <h1 className="text-h3 font-semibold">{currentMenu?.label}</h1>
+          <NotificationBell />
         </header>
 
         {/* 화면마다 시안의 여백이 달라서, 바깥 여백은 각 페이지가 직접 정한다 */}

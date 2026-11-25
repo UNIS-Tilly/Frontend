@@ -60,6 +60,8 @@
   /* 그림자: 할 일 추가 모달(shadow-modal), 날짜 선택 달력(shadow-date-picker) 시안 값 */
   --shadow-modal: 0 8px 32px rgb(0 0 0 / 0.16);
   --shadow-date-picker: 0 8px 24px rgb(0 0 0 / 0.16);
+  /* 그림자: 알림 패널 시안 값 (shadow-panel) */
+  --shadow-panel: 0 8px 28px rgb(0 0 0 / 0.16);
 
   /* 간격 (2XS 4 · XS 8 · S 12 · M 16 · L 24 · XL 32 · 2XL 40 · 3XL 56 · 4XL 64 · 5XL 80)
      p-m, gap-s, mt-xl 처럼 쓴다. 숫자 방식(p-4 = 16px)도 그대로 쓸 수 있다. */
