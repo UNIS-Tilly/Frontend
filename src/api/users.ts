@@ -1,4 +1,4 @@
-import type { UserInfo } from '../types/user'
+import type { ProfileUpdateRequest, UserInfo } from '../types/user'
 import { apiFetch } from './client'
 
 // 아래 4개는 백엔드 feature/user 브랜치의 UserController 와 같은 경로/형식이다.
@@ -11,6 +11,14 @@ export function updateNickname(nickname: string) {
   return apiFetch<{ nickname: string }>('/api/users/me/nickname', {
     method: 'PATCH',
     body: { nickname },
+  })
+}
+
+// 프로필 전체 교체 (가입 직후 프로필 입력, 회원 정보 수정에서 같이 쓴다). 응답은 수정 후 내 정보 전체
+export function updateProfile(request: ProfileUpdateRequest) {
+  return apiFetch<UserInfo>('/api/users/me/profile', {
+    method: 'PUT',
+    body: request,
   })
 }
 

@@ -2,8 +2,8 @@ import type { ReactNode } from 'react'
 import { useProfileOptions } from '../hooks/useProfileOptions'
 import { AM_PM_OPTIONS, HOUR_OPTIONS, MINUTE_OPTIONS } from '../lib/time'
 import type { SignupBasicInfo } from '../types/auth'
-import type { ProfileOption } from '../types/meta'
 import Dropdown from './Dropdown'
+import SelectChip from './SelectChip'
 
 type Props = {
   value: SignupBasicInfo
@@ -227,7 +227,7 @@ function TextInput({
   )
 }
 
-// 직군 선택 칩 목록 (시안 chip-select: 선택하면 연한 파랑 + 진한 파랑 테두리 + 체크 표시). 한 개만 고른다.
+// 직군 선택 칩 목록. 한 개만 고른다.
 function JobGroupChips({
   query,
   selected,
@@ -260,37 +260,14 @@ function JobGroupChips({
   return (
     // 시안은 줄마다 가운데 정렬이고, 한 줄이 입력칸(500px)보다 조금 넓은 경우가 있어 양옆을 10px 씩 넓혔다.
     <div className="-mx-[10px] mt-m flex flex-wrap justify-center gap-m">
-      {query.data.jobGroups.map((jobGroup: ProfileOption) => {
-        const isSelected = selected === jobGroup.code
-        return (
-          <button
-            key={jobGroup.code}
-            type="button"
-            aria-pressed={isSelected}
-            onClick={() => onSelect(jobGroup.code)}
-            className={`flex h-11 cursor-pointer items-center rounded-full border text-body2 ${
-              isSelected
-                ? 'gap-[9px] border-primary-600 bg-primary-100 pr-m pl-[17px] text-primary-600'
-                : 'border-gray-400 bg-white px-m text-black-500 hover:border-primary-300 hover:bg-primary-100 hover:text-primary-600'
-            }`}
-          >
-            {isSelected && (
-              <svg
-                viewBox="38 38 10 8"
-                fill="none"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="h-2 w-[10px]"
-                aria-hidden="true"
-              >
-                <path d="M39 42L42 45L47 39" />
-              </svg>
-            )}
-            {jobGroup.label}
-          </button>
-        )
-      })}
+      {query.data.jobGroups.map((jobGroup) => (
+        <SelectChip
+          key={jobGroup.code}
+          label={jobGroup.label}
+          selected={selected === jobGroup.code}
+          onClick={() => onSelect(jobGroup.code)}
+        />
+      ))}
     </div>
   )
 }
