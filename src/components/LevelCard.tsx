@@ -23,7 +23,7 @@ export default function LevelCard() {
 
       {/* 진행 막대 (의미는 TODO 참고). 시안: 바탕 196×8, 채움 64×7 */}
       <div className="relative mt-auto mb-[39px] flex h-2 w-[196px] items-center rounded-full bg-gray-100">
-        <div className="h-[7px] w-[64px] rounded-full bg-level-bar" />
+        <div className="h-[7px] w-[64px] rounded-full bg-primary-500" />
       </div>
     </section>
   )

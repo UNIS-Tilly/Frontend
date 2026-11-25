@@ -1,4 +1,5 @@
 import { useTasks } from '../hooks/useTasks'
+import { useToggleTask } from '../hooks/useToggleTask'
 import { formatLongDate } from '../lib/date'
 import TaskItem from './TaskItem'
 
@@ -9,6 +10,7 @@ type Props = {
 // 홈 오른쪽의 할 일 체크리스트 카드. 선택한 날짜의 할 일을 서버에서 가져와 보여준다.
 export default function TaskChecklist({ selectedDate }: Props) {
   const { data, isPending, isError, error, refetch } = useTasks(selectedDate)
+  const toggleTask = useToggleTask(selectedDate)
 
   // 디자인 요청: "사용자가 입력한 순서대로 나열하되, 완료한 항목은 가장 아래로".
   // 서버가 미완료/완료를 따로, 각각 입력한 순서(id 오름차순)로 주기 때문에 이어 붙이기만 하면 된다.
@@ -63,10 +65,22 @@ export default function TaskChecklist({ selectedDate }: Props) {
         </p>
       )}
 
+      {/* 완료 체크가 실패했을 때(예: 409 잠긴 주) 서버 문구를 보여 준다. 시안에 없는 상태라 목록 위에 한 줄로 둔다.
+          다른 할 일을 다시 누르면(새 요청) 사라진다. */}
+      {toggleTask.isError && (
+        <p role="alert" className="mt-xs text-body3 text-danger">
+          {toggleTask.error.message}
+        </p>
+      )}
+
       {data && tasks.length > 0 && (
         <ul className="mt-[11px]">
           {tasks.map((task) => (
-            <TaskItem key={task.id} task={task} />
+            <TaskItem
+              key={task.id}
+              task={task}
+              onToggle={(target, completed) => toggleTask.mutate({ task: target, completed })}
+            />
           ))}
         </ul>
       )}

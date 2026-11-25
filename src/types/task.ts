@@ -18,6 +18,15 @@ export type Task = {
   dueInDays: number | null
 }
 
+// PATCH /api/tasks/{taskId} 요청. 바꿀 필드만 보낸다(안 보낸 필드는 서버가 유지).
+// dueDate 를 null 로 보내면 마감 해제, date 는 null 불가(400). 마감은 'YYYY-MM-DDTHH:mm' 형식.
+export type UpdateTaskRequest = {
+  title?: string
+  completed?: boolean
+  date?: string
+  dueDate?: string | null
+}
+
 // GET /api/tasks?date= 응답. 그 날짜에 배정된 할 일이 완료/미완료로 나뉘어 온다.
 // 각 목록은 서버에서 id 오름차순(= 사용자가 입력한 순서)으로 정렬되어 온다.
 export type DailyTasks = {

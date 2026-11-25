@@ -3,6 +3,8 @@ import type { Task } from '../types/task'
 
 type Props = {
   task: Task
+  // 체크박스를 누르면 바뀔 완료 값(현재의 반대)을 부모에게 알린다. 서버 요청은 부모(TaskChecklist)가 한다.
+  onToggle: (task: Task, completed: boolean) => void
 }
 
 // 마감 칩("D-4", "D-DAY", "D+2") 에 쓸 글자와 강조 여부를 정한다. 마감이 없으면 null.
@@ -22,17 +24,19 @@ function getDueChip(task: Task) {
 }
 
 // 체크리스트의 한 줄: 체크박스 · 업무 이름 · 마감 기한(일시 + D-n 칩)
-export default function TaskItem({ task }: Props) {
+export default function TaskItem({ task, onToggle }: Props) {
   const chip = getDueChip(task)
 
   return (
     <li className="flex items-center py-[14px]">
-      {/* TODO(다음 단계): 클릭하면 완료/미완료가 바뀌게 연결한다. 지금은 모양만 보여준다. */}
-      <span
+      {/* 체크박스: button 이라 마우스 클릭과 키보드(Space/Enter) 모두 동작한다 */}
+      <button
+        type="button"
         role="checkbox"
         aria-checked={task.completed}
         aria-label={`${task.title} 완료 여부`}
-        className={`grid size-6 shrink-0 place-items-center rounded-[6px] ${
+        onClick={() => onToggle(task, !task.completed)}
+        className={`grid size-6 shrink-0 cursor-pointer place-items-center rounded-[6px] ${
           task.completed ? 'bg-primary-500' : 'border-[1.5px] border-gray-500 bg-white'
         }`}
       >
@@ -46,7 +50,7 @@ export default function TaskItem({ task }: Props) {
             />
           </svg>
         )}
-      </span>
+      </button>
 
       <span
         className={`ml-s min-w-0 flex-1 truncate text-body2 ${
