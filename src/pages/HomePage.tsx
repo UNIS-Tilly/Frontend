@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Calendar from '../components/Calendar'
+import LevelCard from '../components/LevelCard'
 import TaskChecklist from '../components/TaskChecklist'
 import { getTodayInSeoul } from '../lib/date'
 
@@ -10,8 +11,10 @@ export default function HomePage() {
   return (
     // 여백은 시안(1440px) 좌표 기준: 상단 바 아래 21, 왼쪽 49, 오른쪽 60, 칸 사이 30
     <div className="flex items-start gap-[30px] pt-[21px] pr-[60px] pb-2xl pl-[49px]">
-      <div className="shrink-0">
+      {/* 왼쪽 칸: 캘린더 → (이번 주 추천 행동 카드, 아직 없음) → 레벨 카드. 카드 사이 24px */}
+      <div className="flex shrink-0 flex-col gap-l">
         <Calendar selectedDate={selectedDate} onSelect={setSelectedDate} />
+        <LevelCard />
       </div>
 
       <TaskChecklist selectedDate={selectedDate} />
