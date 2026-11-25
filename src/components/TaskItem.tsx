@@ -1,5 +1,6 @@
 import { diffInDays, formatDueDateTime, getDatePart, getTodayInSeoul } from '../lib/date'
 import type { Task } from '../types/task'
+import Checkbox from './Checkbox'
 import TaskMenu from './TaskMenu'
 
 type Props = {
@@ -40,20 +41,9 @@ export default function TaskItem({ task, onToggle, onMoveToTomorrow, onDelete }:
         aria-checked={task.completed}
         aria-label={`${task.title} 완료 여부`}
         onClick={() => onToggle(task, !task.completed)}
-        className={`grid size-6 shrink-0 cursor-pointer place-items-center rounded-[6px] ${
-          task.completed ? 'bg-primary-500' : 'border-[1.5px] border-gray-500 bg-white'
-        }`}
+        className="grid shrink-0 cursor-pointer"
       >
-        {task.completed && (
-          <svg viewBox="0 0 24 24" fill="none" stroke="white" className="size-6">
-            <path
-              d="M6 12L10.5 16.5L18 7.5"
-              strokeWidth={2.25}
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        )}
+        <Checkbox checked={task.completed} />
       </button>
 
       <span
