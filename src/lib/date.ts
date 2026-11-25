@@ -28,6 +28,12 @@ export function formatLongDate(dateString: string): string {
   return `${month}월 ${day}일 (${getWeekdayName(dateString)})`
 }
 
+// '2026-12-01' → '2026년 12월 1일'  (할 일 추가 모달의 마감 날짜 칸)
+export function formatFullDate(dateString: string): string {
+  const { year, month, day } = parseDateString(dateString)
+  return `${year}년 ${month}월 ${day}일`
+}
+
 // '2026-11-13' → '11/13 (금)'  (마감 기한 표시)
 export function formatShortDate(dateString: string): string {
   const { month, day } = parseDateString(dateString)

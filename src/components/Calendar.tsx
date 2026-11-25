@@ -1,17 +1,20 @@
 import { useState } from 'react'
-import { parseDateString, toDateString } from '../lib/date'
+import { getTodayInSeoul, parseDateString, toDateString } from '../lib/date'
 
 const WEEKDAYS = ['일', '월', '화', '수', '목', '금', '토']
 
 type Props = {
-  // 선택된 날짜 'YYYY-MM-DD'. 선택 상태는 부모(HomePage)가 들고 있고, 여기서는 보여주기만 한다.
-  selectedDate: string
+  // 선택된 날짜 'YYYY-MM-DD'. 선택 상태는 부모가 들고 있고, 여기서는 보여주기만 한다.
+  // null 이면 선택된 날짜 없이 이번 달을 보여 준다. (할 일 추가 모달에서 마감 날짜를 아직 안 골랐을 때)
+  selectedDate: string | null
   onSelect: (dateString: string) => void
+  // 'card' = 홈 왼쪽 캘린더 카드, 'popup' = 할 일 추가 모달의 날짜 선택 달력(시안 date-picker.svg: 테두리 + 그림자)
+  variant?: 'card' | 'popup'
 }
 
-// 홈 화면 왼쪽의 월 캘린더. 시안(P-01)대로 일요일부터 시작하고, 화살표로 한 달씩 이동한다.
-export default function Calendar({ selectedDate, onSelect }: Props) {
-  const selected = parseDateString(selectedDate)
+// 월 캘린더. 시안(P-01)대로 일요일부터 시작하고, 화살표로 한 달씩 이동한다.
+export default function Calendar({ selectedDate, onSelect, variant = 'card' }: Props) {
+  const selected = parseDateString(selectedDate ?? getTodayInSeoul())
 
   // "지금 보고 있는 달"은 선택한 날짜와 별개다. 달을 넘겨 봐도 선택한 날짜는 그대로 유지된다.
   const [view, setView] = useState({ year: selected.year, month: selected.month })
@@ -38,7 +41,11 @@ export default function Calendar({ selectedDate, onSelect }: Props) {
   })
 
   return (
-    <section className="w-[312px] rounded-m bg-white px-m py-l">
+    <section
+      className={`rounded-m bg-white px-m py-l ${
+        variant === 'popup' ? 'w-[314px] border border-gray-300 shadow-date-picker' : 'w-[312px]'
+      }`}
+    >
       <div className="flex items-center justify-between px-s">
         <button
           type="button"
@@ -55,7 +62,7 @@ export default function Calendar({ selectedDate, onSelect }: Props) {
           </svg>
         </button>
 
-        <h2 className="text-body1 font-semibold">
+        <h2 className="text-body1 font-normal">
           {view.year}년 {view.month}월
         </h2>
 

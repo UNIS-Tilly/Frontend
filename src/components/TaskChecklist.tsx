@@ -4,6 +4,7 @@ import { useTasks } from '../hooks/useTasks'
 import { useToggleTask } from '../hooks/useToggleTask'
 import { formatLongDate } from '../lib/date'
 import type { Task } from '../types/task'
+import AddTaskModal from './AddTaskModal'
 import TaskItem from './TaskItem'
 
 type Props = {
@@ -19,6 +20,9 @@ export default function TaskChecklist({ selectedDate }: Props) {
   // 할 일 동작(완료 체크 · 내일 하기 · 삭제)이 실패했을 때 보여 줄 서버 문구. 새 동작을 시작하면 지운다.
   const [actionError, setActionError] = useState<string | null>(null)
   const showError = (error: Error) => setActionError(error.message)
+
+  // 할 일 추가 모달이 열려 있는지
+  const [addModalOpen, setAddModalOpen] = useState(false)
 
   function handleToggle(task: Task, completed: boolean) {
     setActionError(null)
@@ -80,7 +84,7 @@ export default function TaskChecklist({ selectedDate }: Props) {
       )}
 
       {data && tasks.length === 0 && (
-        // TODO(다음 단계): 설계서(P-01)에는 이 문구와 함께 "+ 업무 추가" 버튼이 있다. 할 일 추가를 만들 때 붙인다.
+        // 빈 상태에서도 아래쪽 "+ 할 일 추가하기" 버튼으로 추가한다. (하이파이 1-1의 버튼 위치)
         <p className="grid flex-1 place-content-center text-body2 text-black-300">
           오늘 할 업무를 추가해 보세요
         </p>
@@ -106,6 +110,30 @@ export default function TaskChecklist({ selectedDate }: Props) {
             />
           ))}
         </ul>
+      )}
+
+      {/* "+ 할 일 추가하기" 버튼: 카드 맨 아래 왼쪽 (시안 146×34). 목록을 불러온 뒤에만 보인다 */}
+      {data && (
+        <button
+          type="button"
+          onClick={() => setAddModalOpen(true)}
+          className="mt-auto flex h-[34px] w-fit cursor-pointer items-center gap-[7px] rounded-full bg-primary-500 px-m text-body2 font-normal text-white"
+        >
+          <svg
+            viewBox="0 0 16 16"
+            fill="none"
+            stroke="currentColor"
+            className="size-4"
+            aria-hidden="true"
+          >
+            <path d="M8 13.333V2.667M2.667 8H13.333" strokeWidth={2} strokeLinecap="round" />
+          </svg>
+          할 일 추가하기
+        </button>
+      )}
+
+      {addModalOpen && (
+        <AddTaskModal assignedDate={selectedDate} onClose={() => setAddModalOpen(false)} />
       )}
     </section>
   )

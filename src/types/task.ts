@@ -18,6 +18,14 @@ export type Task = {
   dueInDays: number | null
 }
 
+// POST /api/tasks 요청. date 를 빼면 서버가 오늘로, dueDate 를 빼면 마감 없음으로 저장한다.
+// title 은 앞뒤 공백 제거 후 1~20자. dueDate 는 'YYYY-MM-DDTHH:mm' (시간 필수, 날짜만 보내면 400).
+export type CreateTaskRequest = {
+  title: string
+  date?: string
+  dueDate?: string
+}
+
 // PATCH /api/tasks/{taskId} 요청. 바꿀 필드만 보낸다(안 보낸 필드는 서버가 유지).
 // dueDate 를 null 로 보내면 마감 해제, date 는 null 불가(400). 마감은 'YYYY-MM-DDTHH:mm' 형식.
 export type UpdateTaskRequest = {

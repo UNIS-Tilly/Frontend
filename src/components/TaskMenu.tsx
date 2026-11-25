@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
+import { useCloseOnOutside } from '../hooks/useCloseOnOutside'
 
 type Props = {
   taskTitle: string
@@ -13,25 +14,8 @@ export default function TaskMenu({ taskTitle, onMoveToTomorrow, onDelete }: Prop
   const [open, setOpen] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
 
-  // 메뉴가 열려 있을 때만: 메뉴 바깥을 누르거나 Esc 를 누르면 닫는다.
-  useEffect(() => {
-    if (!open) return
-
-    function handleMouseDown(event: MouseEvent) {
-      if (!containerRef.current?.contains(event.target as Node)) setOpen(false)
-    }
-    function handleKeyDown(event: KeyboardEvent) {
-      if (event.key === 'Escape') setOpen(false)
-    }
-
-    document.addEventListener('mousedown', handleMouseDown)
-    document.addEventListener('keydown', handleKeyDown)
-    // 메뉴가 닫히거나 화면에서 사라질 때 등록한 리스너를 꼭 지운다.
-    return () => {
-      document.removeEventListener('mousedown', handleMouseDown)
-      document.removeEventListener('keydown', handleKeyDown)
-    }
-  }, [open])
+  // 메뉴 바깥을 누르거나 Esc 를 누르면 닫는다.
+  useCloseOnOutside(containerRef, open, () => setOpen(false))
 
   // 메뉴 항목을 누르면 메뉴를 닫고 동작을 실행한다.
   function select(action: () => void) {
