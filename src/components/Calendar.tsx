@@ -62,7 +62,7 @@ export default function Calendar({ selectedDate, onSelect, variant = 'card' }: P
           </svg>
         </button>
 
-        <h2 className="text-body1 font-normal">
+        <h2 className="text-body1 font-semibold">
           {view.year}년 {view.month}월
         </h2>
 

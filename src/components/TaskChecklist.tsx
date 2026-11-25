@@ -117,7 +117,7 @@ export default function TaskChecklist({ selectedDate }: Props) {
         <button
           type="button"
           onClick={() => setAddModalOpen(true)}
-          className="mt-auto flex h-[34px] w-fit cursor-pointer items-center gap-[7px] rounded-full bg-primary-500 px-m text-body2 font-normal text-white"
+          className="mt-auto flex h-[34px] w-fit cursor-pointer items-center gap-[7px] rounded-full bg-primary-500 px-m text-button font-semibold text-white"
         >
           <svg
             viewBox="0 0 16 16"

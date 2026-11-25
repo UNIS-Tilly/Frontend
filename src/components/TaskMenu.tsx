@@ -39,7 +39,7 @@ export default function TaskMenu({ taskTitle, onMoveToTomorrow, onDelete }: Prop
       {open && (
         <div
           role="menu"
-          className="absolute top-full right-2xs z-10 mt-s flex w-[158px] flex-col overflow-hidden rounded-m border border-gray-400 bg-white text-body2 font-normal shadow-popover"
+          className="absolute top-full right-2xs z-10 mt-s flex w-[158px] flex-col overflow-hidden rounded-m border border-gray-400 bg-white text-body2 shadow-popover"
         >
           {/* TODO(할 일 추가 모달을 만들 때): "수정"은 같은 모달을 수정 모드로 열어 연결한다. 지금은 눌러도 동작하지 않는다. */}
           <button

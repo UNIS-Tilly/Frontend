@@ -41,7 +41,7 @@ export default function Dropdown({
         aria-haspopup="listbox"
         aria-expanded={open}
         onClick={() => setOpen((current) => !current)}
-        className={`flex h-12 w-full cursor-pointer items-center justify-between rounded-m border bg-white pr-m pl-m text-body2 font-normal ${
+        className={`flex h-12 w-full cursor-pointer items-center justify-between rounded-m border bg-white pr-m pl-m text-body2 ${
           open ? 'border-primary-500' : 'border-gray-400'
         } ${selectedLabel ? 'text-black-500' : 'text-gray-500'}`}
       >
@@ -147,7 +147,7 @@ function OptionItem({
       <button
         type="button"
         onClick={() => onSelect(option.value)}
-        className={`flex h-[42px] w-full shrink-0 cursor-pointer items-center rounded-s px-m text-body2 font-normal ${
+        className={`flex h-[42px] w-full shrink-0 cursor-pointer items-center rounded-s px-m text-body2 ${
           selected ? 'bg-primary-100 text-primary-600' : 'text-black-500 hover:bg-primary-100'
         }`}
       >

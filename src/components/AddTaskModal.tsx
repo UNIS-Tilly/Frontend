@@ -72,7 +72,7 @@ export default function AddTaskModal({ assignedDate, onClose }: Props) {
         aria-modal="true"
         aria-labelledby="add-task-title"
         onSubmit={handleSubmit}
-        className="w-[520px] rounded-l bg-white p-xl font-normal shadow-modal"
+        className="w-[520px] rounded-l bg-white p-xl shadow-modal"
       >
         <div className="flex h-8 items-center justify-between">
           {/* 시안 값: 22px SemiBold (디자인 시스템 글자 크기에 22px 는 없다) */}
@@ -144,14 +144,14 @@ export default function AddTaskModal({ assignedDate, onClose }: Props) {
           <button
             type="button"
             onClick={onClose}
-            className="h-[42px] w-[134px] cursor-pointer rounded-m border border-gray-400 text-body2 text-black-500"
+            className="h-[42px] w-[134px] cursor-pointer rounded-m border border-gray-400 text-button font-semibold text-black-500"
           >
             취소
           </button>
           <button
             type="submit"
             disabled={!canSubmit}
-            className="h-[42px] w-[135px] cursor-pointer rounded-m bg-primary-500 text-body2 text-white disabled:cursor-default disabled:bg-gray-400"
+            className="h-[42px] w-[135px] cursor-pointer rounded-m bg-primary-500 text-button font-semibold text-white disabled:cursor-default disabled:bg-gray-400"
           >
             추가하기
           </button>
