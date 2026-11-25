@@ -1,10 +1,14 @@
 import { diffInDays, formatDueDateTime, getDatePart, getTodayInSeoul } from '../lib/date'
 import type { Task } from '../types/task'
+import TaskMenu from './TaskMenu'
 
 type Props = {
   task: Task
   // 체크박스를 누르면 바뀔 완료 값(현재의 반대)을 부모에게 알린다. 서버 요청은 부모(TaskChecklist)가 한다.
   onToggle: (task: Task, completed: boolean) => void
+  // ⋮ 메뉴의 "내일 하기" / "삭제". 이것도 서버 요청은 부모가 한다.
+  onMoveToTomorrow: (task: Task) => void
+  onDelete: (task: Task) => void
 }
 
 // 마감 칩("D-4", "D-DAY", "D+2") 에 쓸 글자와 강조 여부를 정한다. 마감이 없으면 null.
@@ -24,7 +28,7 @@ function getDueChip(task: Task) {
 }
 
 // 체크리스트의 한 줄: 체크박스 · 업무 이름 · 마감 기한(일시 + D-n 칩)
-export default function TaskItem({ task, onToggle }: Props) {
+export default function TaskItem({ task, onToggle, onMoveToTomorrow, onDelete }: Props) {
   const chip = getDueChip(task)
 
   return (
@@ -74,8 +78,11 @@ export default function TaskItem({ task, onToggle }: Props) {
         )}
       </div>
 
-      {/* 시안의 ⋮(수정·삭제) 버튼 자리. 수정·삭제를 만들 때 버튼으로 채운다. */}
-      <div className="ml-[18px] size-6 shrink-0" />
+      <TaskMenu
+        taskTitle={task.title}
+        onMoveToTomorrow={() => onMoveToTomorrow(task)}
+        onDelete={() => onDelete(task)}
+      />
     </li>
   )
 }

@@ -15,3 +15,8 @@ export function updateTask(taskId: number, request: UpdateTaskRequest) {
     body: request,
   })
 }
+
+// 할 일 삭제. 성공하면 data 는 null 이다.
+export function deleteTask(taskId: number) {
+  return apiFetch<null>(`/api/tasks/${taskId}`, { method: 'DELETE' })
+}

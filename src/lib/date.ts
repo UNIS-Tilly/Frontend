@@ -56,6 +56,14 @@ export function diffInDays(from: string, to: string): number {
   )
 }
 
+// '2026-11-30' + 1 → '2026-12-01'  (할 일 "내일 하기")
+// Date 가 월말·연말 넘김을 알아서 계산해 준다.
+export function addDays(dateString: string, days: number): string {
+  const { year, month, day } = parseDateString(dateString)
+  const result = new Date(year, month - 1, day + days)
+  return toDateString(result.getFullYear(), result.getMonth() + 1, result.getDate())
+}
+
 // 사용자가 어느 나라에 있든 "오늘"은 서울 기준으로 계산한다.
 // 'en-CA' 로케일은 날짜를 YYYY-MM-DD 모양으로 돌려주는 점을 이용한다.
 export function getTodayInSeoul(): string {
