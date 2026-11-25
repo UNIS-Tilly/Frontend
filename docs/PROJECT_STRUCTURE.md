@@ -32,20 +32,20 @@ src/main/java/com/unis/tilly
 │   ├── dto
 │   ├── repository
 │   └── service
-├── user                      # 내 정보, 프로필(성별·출생연도·직군·역량), 성장 레벨, 퇴근 시간, 탈퇴, 프로필 선택지(options)
+├── user                      # 내 정보, 프로필(성별·나이·직군·역량), 성장 레벨, 퇴근 시간, 탈퇴, 프로필 선택지(options)
 │   ├── controller            # UserController, ProfileOptionController(GET /meta/profile-options) [제안]
 │   ├── dto
 │   ├── entity                # User, UserCompetency (user_competencies 매핑)
 │   ├── enums                 # Gender, JobGroup, CompetencyType, Competency (D-99, 키워드는 [임시])
 │   ├── repository
 │   └── service
-├── task                      # 할 일 (배정일·마감일·완료일·메모, D-102~D-106)
+├── task                      # 할 일 (배정일 필수·마감 일시·완료일(참고용)·메모, 그날 추가한 일만 노출, D-102~D-106, D-119~D-123)
 │   ├── controller
 │   ├── dto
 │   ├── entity
 │   ├── repository
 │   └── service
-├── record                    # 기록 요약, 하루 질문(확장 질문), 임시저장·완료, 아카이브 달력 (회고 없음, D-107)
+├── record                    # 기록 요약, 하루 회고(별도 테이블, D-124), 하루 질문(확장 질문), 임시저장·완료, 아카이브 달력
 │   ├── controller
 │   ├── dto
 │   ├── entity
@@ -53,7 +53,7 @@ src/main/java/com/unis/tilly
 │   ├── repository
 │   ├── scheduler             # 퇴근 10분 전 자동 질문 생성
 │   └── service
-├── insight                   # 주간 인사이트(제목·소제목·주간 달성·업무 흐름 스냅샷), 목록, 추천 행동 반영
+├── insight                   # 주간 인사이트(제목·소제목·주간 달성·업무 흐름 스냅샷), 목록, 홈 카드(추천 행동은 표시만), 주간 기록 잠금
 │   ├── controller
 │   ├── dto
 │   ├── entity
@@ -84,9 +84,9 @@ src/main/java/com/unis/tilly
 |---|---|---|---|
 | `auth` | 로그인, 로그아웃, 토큰, 현재 사용자 조회 | 3장, 4.5 | `AuthController`, `AuthService`, `CurrentUserProvider`(인터페이스) |
 | `user` | 내 정보 조회, **프로필 전체 교체**, 프로필 선택지, 퇴근 시간 설정, 성장 레벨 계산, 탈퇴 | 4.1~4.4, 4.6, 4.7 | `User`, `UserCompetency`, `UserController`, `UserService`, `UserRepository` |
-| `task` | 할 일 조회(노출 규칙·지연 일수)·추가·수정·삭제·완료 토글 | 5장 | `Task`, `TaskController`, `TaskService`, `TaskRepository` |
-| `record` | 기록 요약, 하루 질문 조회·생성, 임시저장·완료(`taskMemos`), **아카이브 월별 조회(`hasRecord`)** | 6장, 7장 | `DailyRecord`, `RecordQuestion`, `RecordController`, `RecordService`, `RecordQuestionService`, `ArchiveController`(7장) |
-| `insight` | 주간 인사이트 조회·분석 요청·행동 반영·**목록(미확정)** | 9장 | `WeeklyInsight`, `InsightStrength`, `InsightEvidence`, `InsightImprovement`, `InsightAction`, 주간 스냅샷(일별 통계·주간 흐름, 저장 방식은 Q-7), `InsightController`, `InsightService` |
+| `task` | 할 일 조회(그날 배정분만·`dueInDays`)·추가·수정·삭제·완료 토글 | 5장 | `Task`, `TaskController`, `TaskService`, `TaskRepository` |
+| `record` | 기록 요약, **하루 회고 조회·저장(`reflection`, `DailyReflection`)**, 하루 질문 조회·생성, 임시저장·완료(`taskMemos`), **아카이브 월별 조회(`hasRecord`)** | 6장, 7장 | `DailyRecord`, `DailyReflection`, `RecordQuestion`, `RecordController`, `RecordService`, `RecordQuestionService`, `ArchiveController`(7장) |
+| `insight` | 주간 인사이트 조회·분석 요청·홈 카드·목록·주간 잠금(**구현됨, PR #18**, 추천 행동 반영은 없음 D-147) | 9장 | `WeeklyInsight`, `InsightStrength`, `InsightEvidence`, `InsightImprovement`, `InsightAction`, 주간 스냅샷(`InsightSnapshot`, 일별 통계·주간 흐름), `InsightController`, `InsightService`, `InsightGenerationService`(비동기 생성), `InsightLockService`(주간 잠금), `InsightRecovery`(GENERATING 정리) |
 | `ai` | 확장 질문 생성, 주간 인사이트 생성 호출 | 8장 | `QuestionGenerator`, `WeeklyInsightGenerator` (인터페이스), GPT 어댑터(Spring 직접 호출)는 모델·키 확정 후 |
 | `global` | 공통 응답, 베이스 엔티티, 설정, 예외 처리, 보안 | 1장 | `ApiResponse`, `BaseEntity`, `ErrorCode` 등 (5장) |
 
@@ -96,7 +96,7 @@ src/main/java/com/unis/tilly
 |---|---|---|
 | `record` | `RecordStatus` (`NOT_STARTED` / `DRAFT` / `COMPLETED`) | API_SPEC 1.4 |
 | `user` | `Gender`, `JobGroup`, `CompetencyType`, `Competency` | API_SPEC 1.4, D-99 |
-| `insight` | `InsightStatus`, `EvidenceType` (`MEMO`/`QUESTION_ANSWER`/`TASK`) | API_SPEC 1.4 |
+| `insight` | `InsightStatus`, `EvidenceType` (`MEMO`/`REFLECTION`/`QUESTION_ANSWER`/`TASK`), `StarPart` (`S`/`T`/`A`/`R`) | API_SPEC 1.4 |
 
 ### 3.2 클래스 이름 주의
 

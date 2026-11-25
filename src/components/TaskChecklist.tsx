@@ -66,7 +66,7 @@ export default function TaskChecklist({ selectedDate }: Props) {
       {data && tasks.length > 0 && (
         <ul className="mt-[11px]">
           {tasks.map((task) => (
-            <TaskItem key={task.id} task={task} selectedDate={selectedDate} />
+            <TaskItem key={task.id} task={task} />
           ))}
         </ul>
       )}

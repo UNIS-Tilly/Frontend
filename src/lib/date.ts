@@ -34,6 +34,17 @@ export function formatShortDate(dateString: string): string {
   return `${month}/${day} (${getWeekdayName(dateString)})`
 }
 
+// '2026-11-13T16:00:00' → '2026-11-13'  (일시에서 날짜 부분만)
+export function getDatePart(dateTime: string): string {
+  return dateTime.slice(0, 10)
+}
+
+// '2026-11-13T16:00:00' → '11/13 (금) 16:00'  (할 일의 마감 일시 표시)
+export function formatDueDateTime(dateTime: string): string {
+  const time = dateTime.slice(11, 16) // 'HH:mm'
+  return `${formatShortDate(getDatePart(dateTime))} ${time}`
+}
+
 // from → to 까지 며칠 남았는지. to 가 더 뒤면 양수, 같으면 0, 앞이면 음수.
 // Date.UTC 를 쓰는 이유: 서머타임 같은 시간대 영향 없이 "날짜 차이"만 정확히 구하기 위해서다.
 export function diffInDays(from: string, to: string): number {

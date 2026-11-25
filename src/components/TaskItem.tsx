@@ -1,29 +1,29 @@
-import { diffInDays, formatShortDate } from '../lib/date'
+import { diffInDays, formatDueDateTime, getDatePart, getTodayInSeoul } from '../lib/date'
 import type { Task } from '../types/task'
 
 type Props = {
   task: Task
-  // 지금 보고 있는 날짜. D-n 을 "이 날짜 기준으로 마감까지 며칠 남았나"로 계산하는 데 쓴다.
-  selectedDate: string
 }
 
-// 마감 칩("D-4", "D-DAY", "D+2") 에 쓸 글자와 강조 여부를 정한다. 보여줄 게 없으면 null.
-function getDueChip(task: Task, selectedDate: string) {
+// 마감 칩("D-4", "D-DAY", "D+2") 에 쓸 글자와 강조 여부를 정한다. 마감이 없으면 null.
+function getDueChip(task: Task) {
   if (!task.dueDate) return null
 
-  // 마감일이 지난 미완료 할 일: 서버가 알려주는 지난 일수를 그대로 쓴다.
-  // 시안에 D+n 모양이 없어서, 가장 눈에 띄는 D-DAY 와 같은 모양으로 임시 표시한다.
-  if (task.overdueDays !== null) return { label: `D+${task.overdueDays}`, strong: true }
+  // 남은 일수는 서버가 "오늘" 기준으로 계산해 준다(dueInDays).
+  // 다만 서버는 완료한 할 일에는 이 값을 주지 않는다. 시안(컴포넌트 시트 todo-item)은 완료 항목에도
+  // D-DAY 칩을 보여주므로(시안 우선 원칙), 그때는 마감 날짜와 오늘로 프론트가 직접 계산한다.
+  const daysLeft = task.dueInDays ?? diffInDays(getTodayInSeoul(), getDatePart(task.dueDate))
 
-  const daysLeft = diffInDays(selectedDate, task.dueDate)
-  if (daysLeft === 0) return { label: 'D-DAY', strong: true }
-  if (daysLeft > 0) return { label: `D-${daysLeft}`, strong: false }
-  return null // 마감이 지난 뒤 완료한 할 일: 서버가 지난 일수를 주지 않아 칩을 만들지 않는다
+  // 시안에 D+n 모양이 없어서, 가장 눈에 띄는 D-DAY 와 같은 모양(파란 채움)으로 표시한다.
+  if (daysLeft <= 0) {
+    return { label: daysLeft === 0 ? 'D-DAY' : `D+${-daysLeft}`, strong: true }
+  }
+  return { label: `D-${daysLeft}`, strong: false }
 }
 
-// 체크리스트의 한 줄: 체크박스 · 업무 이름 · 마감 기한(날짜 + D-n 칩)
-export default function TaskItem({ task, selectedDate }: Props) {
-  const chip = getDueChip(task, selectedDate)
+// 체크리스트의 한 줄: 체크박스 · 업무 이름 · 마감 기한(일시 + D-n 칩)
+export default function TaskItem({ task }: Props) {
+  const chip = getDueChip(task)
 
   return (
     <li className="flex items-center py-[14px]">
@@ -56,9 +56,9 @@ export default function TaskItem({ task, selectedDate }: Props) {
         {task.title}
       </span>
 
-      {/* 마감 기한. 시안에는 "11/13 (금) 16:00" 처럼 시간도 있지만, 백엔드가 날짜만 줘서 날짜만 보여준다(보류 항목). */}
+      {/* 마감 기한: 시안대로 "11/13 (금) 16:00" + 칩. 마감이 없으면 "-" */}
       <div className="flex w-[200px] shrink-0 items-center justify-center gap-[17px] text-body3 text-black-300">
-        {task.dueDate ? <span>{formatShortDate(task.dueDate)}</span> : <span>-</span>}
+        {task.dueDate ? <span>{formatDueDateTime(task.dueDate)}</span> : <span>-</span>}
         {chip && (
           <span
             className={`grid h-[25px] w-[67px] place-items-center rounded-full ${
