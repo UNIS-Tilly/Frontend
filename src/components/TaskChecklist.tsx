@@ -27,7 +27,7 @@ export default function TaskChecklist({ selectedDate }: Props) {
             </span>
             <div className="h-[7px] w-[160px] overflow-hidden rounded-full bg-gray-200">
               <div
-                className="h-full rounded-full bg-secondary-500"
+                className="h-full rounded-full bg-primary-500"
                 style={{ width: `${(data.completedCount / data.totalCount) * 100}%` }}
               />
             </div>

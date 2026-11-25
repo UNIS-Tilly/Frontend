@@ -115,6 +115,8 @@ TILLY 프론트엔드는 아직 로그인·가입 화면과 API 기반 코드만
 
 ## 7. 작업 로그
 
+- **2026-11-26 (디자인 변경)**: 디자이너 알림 — 홈 체크리스트 "n/m 완료" 진행 막대 채움색을 Secondary/500 → **Primary/500**으로 변경(`TaskChecklist.tsx` 반영). 레벨 카드 막대(`#C5EA54`)는 시안상 그대로.
+
 - **2026-11-26 (홈 ④ 레벨 카드)**: 새 시안 `_inbox/레벨 카드.svg` → `components/level-card.svg`로 정리. `LevelCard.tsx`(시안 첫 번째 배리언트 고정, 장식은 시안 좌표 그대로 인라인 SVG), 흙 그림은 시안에 박힌 PNG에서 잘라 `src/assets/level-soil.png`로 저장, `HomePage` 왼쪽 칸에 캘린더 아래 24px 간격으로 배치(시안에서는 사이에 "이번 주 추천 행동" 카드가 들어갈 자리). API 호출 없음.
 
 - **2026-11-26 (홈 ③ 할 일 v0.5 대응)**: `types/task.ts`(`overdueDays`→`dueInDays`, `date` 필수, `dueDate` 일시), `lib/date.ts`(`getDatePart`, `formatDueDateTime`), `TaskItem.tsx`(칩을 `dueInDays` 기준으로, 완료 항목은 프론트 계산, `selectedDate` prop 삭제), `TaskChecklist.tsx`. 사용 명세 API_SPEC v0.5. `lint`·`build` 통과. 화면 확인은 아직. 새 시안 `docs/design/_inbox/레벨 카드.svg` 받음(정리·구현은 질문 답변 후).
