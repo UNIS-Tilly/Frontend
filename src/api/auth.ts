@@ -1,4 +1,4 @@
-import type { LoginResponse, RegisterResponse } from '../types/auth'
+import type { LoginResponse, RegisterRequest, RegisterResponse } from '../types/auth'
 import { apiFetch } from './client'
 
 // 구글 인가 코드(code)를 백엔드에 보내 로그인한다. (구글 → 우리 프론트 콜백으로 받은 code)
@@ -10,11 +10,11 @@ export function loginWithGoogle(code: string) {
   })
 }
 
-// 첫 로그인(SIGNUP_REQUIRED)이었던 사용자의 가입 완료
-export function register(signupToken: string, nickname: string) {
+// 첫 로그인(SIGNUP_REQUIRED)이었던 사용자의 가입 완료. gender·age 는 선택(null 가능)
+export function register(request: RegisterRequest) {
   return apiFetch<RegisterResponse>('/api/auth/register', {
     method: 'POST',
-    body: { signupToken, nickname },
+    body: request,
     auth: false,
   })
 }

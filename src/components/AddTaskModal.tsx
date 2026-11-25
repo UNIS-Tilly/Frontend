@@ -2,8 +2,9 @@ import { useRef, useState, type FormEvent } from 'react'
 import { useCloseOnOutside } from '../hooks/useCloseOnOutside'
 import { useCreateTask } from '../hooks/useCreateTask'
 import { formatFullDate } from '../lib/date'
+import { AM_PM_OPTIONS, HOUR_OPTIONS, MINUTE_OPTIONS, toTimeString } from '../lib/time'
 import Calendar from './Calendar'
-import Dropdown, { type DropdownOption } from './Dropdown'
+import Dropdown from './Dropdown'
 
 type Props = {
   // 할 일을 넣을 날짜(배정일). 홈에서 보고 있는 날짜가 그대로 들어간다. (2026-11-24 결정)
@@ -12,26 +13,6 @@ type Props = {
 }
 
 const TITLE_MAX_LENGTH = 20 // 백엔드 규칙: 앞뒤 공백 제거 후 1~20자
-
-// 드롭다운 선택지 (디자이너 전언 2026-11-26: 시는 1~12시, 분은 5분 단위)
-const AM_PM_OPTIONS: DropdownOption[] = [
-  { value: 'AM', label: '오전' },
-  { value: 'PM', label: '오후' },
-]
-const HOUR_OPTIONS: DropdownOption[] = Array.from({ length: 12 }, (_, index) => ({
-  value: String(index + 1),
-  label: `${index + 1}시`,
-}))
-const MINUTE_OPTIONS: DropdownOption[] = Array.from({ length: 12 }, (_, index) => ({
-  value: String(index * 5),
-  label: `${index * 5}분`,
-}))
-
-// 오전/오후 + 시 + 분 → 서버 형식 'HH:mm'. (오전 12시 = 00시, 오후 12시 = 12시)
-function toTimeString(amPm: string, hour: string, minute: string): string {
-  const hour24 = (Number(hour) % 12) + (amPm === 'PM' ? 12 : 0)
-  return `${String(hour24).padStart(2, '0')}:${minute.padStart(2, '0')}`
-}
 
 // 할 일 추가 모달. 시안: docs/design/screens/1-home/1-3 ~ 1-6 (카드 520×438)
 // 시안에 모달 뒤 어두운 배경이 없어서, 그림자만 있는 카드를 화면 가운데에 띄운다.
