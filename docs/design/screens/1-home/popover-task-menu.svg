@@ -1,0 +1,35 @@
+<svg width="174" height="141" viewBox="0 0 174 141" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="popover-home" filter="url(#filter0_d_267_1225)">
+<path d="M8 22C8 13.1634 15.1634 6 24 6H150C158.837 6 166 13.1634 166 22V115C166 123.837 158.837 131 150 131H24C15.1634 131 8 123.837 8 115V22Z" fill="white" shape-rendering="crispEdges"/>
+<path d="M24 6.5H150C158.56 6.5 165.5 13.4396 165.5 22V115C165.5 123.56 158.56 130.5 150 130.5H24C15.4396 130.5 8.5 123.56 8.5 115V22C8.5 13.4396 15.4396 6.5 24 6.5Z" stroke="#CFCFCF" shape-rendering="crispEdges"/>
+<g id="Frame 204">
+<mask id="path-3-inside-1_267_1225" fill="white">
+<path d="M9 23C9 14.1634 16.1634 7 25 7H149C157.837 7 165 14.1634 165 23V45H9V23Z"/>
+</mask>
+<path d="M9 7H165H9ZM165 46H9V44H165V46ZM9 45V7V45ZM165 7V45V7Z" fill="#E4E4E4" mask="url(#path-3-inside-1_267_1225)"/>
+<text id="&#236;&#136;&#152;&#236;&#160;&#149;" fill="#333333" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="16" letter-spacing="0em"><tspan x="73" y="31.1875">&#xc218;&#xc815;</tspan></text>
+</g>
+<g id="Frame 200">
+<mask id="path-6-inside-2_267_1225" fill="white">
+<path d="M9 45H165V88H9V45Z"/>
+</mask>
+<path d="M165 88V87H9V88V89H165V88Z" fill="#E4E4E4" mask="url(#path-6-inside-2_267_1225)"/>
+<text id="&#235;&#130;&#180;&#236;&#157;&#188; &#237;&#149;&#152;&#234;&#184;&#176;" fill="#333333" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="16" letter-spacing="0em"><tspan x="57" y="71.6875">&#xb0b4;&#xc77c; &#xd558;&#xae30;</tspan></text>
+</g>
+<g id="Frame 201">
+<text id="&#236;&#130;&#173;&#236;&#160;&#156;" fill="#FF0000" style="white-space: pre" xml:space="preserve" font-family="Pretendard" font-size="16" letter-spacing="0em"><tspan x="73" y="114.688">&#xc0ad;&#xc81c;</tspan></text>
+</g>
+</g>
+<defs>
+<filter id="filter0_d_267_1225" x="0" y="0" width="174" height="141" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="2"/>
+<feGaussianBlur stdDeviation="4"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_267_1225"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_267_1225" result="shape"/>
+</filter>
+</defs>
+</svg>
